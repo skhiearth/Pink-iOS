@@ -1,0 +1,23 @@
+{
+  "images" : [
+    {
+      "filename" : "1200px-Estée_Lauder_Companies_Logo.svg.png",
+      "idiom" : "universal",
+      "scale" : "1x"
+    },
+    {
+      "filename" : "1200px-Estée_Lauder_Companies_Logo.svg@2x.png",
+      "idiom" : "universal",
+      "scale" : "2x"
+    },
+    {
+      "filename" : "1200px-Estée_Lauder_Companies_Logo.svg@3x.png",
+      "idiom" : "universal",
+      "scale" : "3x"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}
