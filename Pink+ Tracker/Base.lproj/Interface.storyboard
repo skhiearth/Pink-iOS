@@ -21,14 +21,44 @@
                         </group>
                         <group width="1" alignment="left" id="paf-ta-LF8">
                             <items>
-                                <group alignment="left" layout="vertical" spacing="8" id="vdE-ju-Wbp">
+                                <group alignment="left" layout="vertical" spacing="9" id="vdE-ju-Wbp">
                                     <items>
-                                        <switch width="1" alignment="left" title="Lump" id="U5t-0m-bGk"/>
-                                        <switch width="1" alignment="left" title="Thickness or Swelling" id="g27-zf-JRJ"/>
-                                        <switch width="1" alignment="left" title="Skin Irritation" id="rA3-E2-dHr"/>
-                                        <switch width="1" alignment="left" title="Redness or Flaky Skin" id="YOn-OU-eW9"/>
-                                        <switch width="1" alignment="left" title="Pain/General Discomfort" id="XGQ-ic-aJR"/>
-                                        <switch width="1" alignment="left" title="Eccentric Discharge" id="Wn6-hv-6NQ"/>
+                                        <switch width="1" alignment="left" title="Lump" id="U5t-0m-bGk">
+                                            <fontDescription key="font" style="UICTFontTextStyleCaption1"/>
+                                            <connections>
+                                                <action selector="lumpSwitcher:" destination="AgC-eL-Hgc" id="Ejb-zf-8LD"/>
+                                            </connections>
+                                        </switch>
+                                        <switch width="1" alignment="left" title="Thickness or Swelling" id="g27-zf-JRJ">
+                                            <fontDescription key="font" style="UICTFontTextStyleCaption1"/>
+                                            <connections>
+                                                <action selector="swellingSwitcher:" destination="AgC-eL-Hgc" id="Foh-IT-bvR"/>
+                                            </connections>
+                                        </switch>
+                                        <switch width="1" alignment="left" title="Skin Irritation" id="rA3-E2-dHr">
+                                            <fontDescription key="font" style="UICTFontTextStyleCaption1"/>
+                                            <connections>
+                                                <action selector="irritationSwitcher:" destination="AgC-eL-Hgc" id="Ngb-ep-7se"/>
+                                            </connections>
+                                        </switch>
+                                        <switch width="1" alignment="left" title="Redness or Flaky Skin" id="YOn-OU-eW9">
+                                            <fontDescription key="font" style="UICTFontTextStyleCaption1"/>
+                                            <connections>
+                                                <action selector="skinswitcher:" destination="AgC-eL-Hgc" id="B68-4a-OrH"/>
+                                            </connections>
+                                        </switch>
+                                        <switch width="1" alignment="left" title="Pain/General Discomfort" id="XGQ-ic-aJR">
+                                            <fontDescription key="font" style="UICTFontTextStyleCaption1"/>
+                                            <connections>
+                                                <action selector="painswitcher:" destination="AgC-eL-Hgc" id="yUo-fF-nwp"/>
+                                            </connections>
+                                        </switch>
+                                        <switch width="1" alignment="left" title="Eccentric Discharge" id="Wn6-hv-6NQ">
+                                            <fontDescription key="font" style="UICTFontTextStyleCaption1"/>
+                                            <connections>
+                                                <action selector="dischargeswitcher:" destination="AgC-eL-Hgc" id="Vez-k6-GC8"/>
+                                            </connections>
+                                        </switch>
                                     </items>
                                     <edgeInsets key="margins" left="0.0" right="0.0" top="9" bottom="10"/>
                                 </group>

@@ -8,9 +8,10 @@
 import UIKit
 import Firebase
 import WatchConnectivity
+import SVProgressHUD
 
 @main
-class AppDelegate: UIResponder, UIApplicationDelegate, WCSessionDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
     var session: WCSession?
@@ -18,23 +19,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate, WCSessionDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         FirebaseApp.configure()
-        self.configureWatchKitSesstion()
         
-        if let validSession = self.session, validSession.isReachable {
-            let data: [String: Any] = ["iPhone": "Data from iPhone" as Any]
-            validSession.sendMessage(data, replyHandler: nil, errorHandler: nil)
-        }
+        self.configureWatchKitSesstion()
         
         return true
     }
-    
-    func configureWatchKitSesstion() {
-        if WCSession.isSupported() {
-          session = WCSession.default
-          session?.delegate = self
-          session?.activate()
-        }
-      }
 
     // MARK: UISceneSession Lifecycle
 
@@ -49,6 +38,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate, WCSessionDelegate {
         // If any sessions were discarded while the application was not running, this will be called shortly after application:didFinishLaunchingWithOptions.
         // Use this method to release any resources that were specific to the discarded scenes, as they will not return.
     }
+
+}
+
+extension AppDelegate: WCSessionDelegate {
+    
+    func configureWatchKitSesstion() {
+        if WCSession.isSupported() {
+            print("Session init")
+          session = WCSession.default
+          session?.delegate = self
+          session?.activate()
+        }
+    }
     
     func sessionDidBecomeInactive(_ session: WCSession) {
     }
@@ -60,7 +62,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, WCSessionDelegate {
     }
 
     func session(_ session: WCSession, didReceiveMessage message: [String : Any]) {
-        print("received message: \(message)")
+        SVProgressHUD.show(withStatus: message.description)
     }
-
 }
