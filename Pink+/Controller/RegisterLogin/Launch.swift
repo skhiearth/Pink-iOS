@@ -12,10 +12,12 @@ import FirebaseDatabase
 import SVProgressHUD
 import SwiftyJSON
 import NVActivityIndicatorView
+import WatchConnectivity
 
 class Launch: UIViewController {
     
     var ref: DatabaseReference!
+    var session: WCSession?
     var titlesDict:[Int: String] = [:]
 
     override func viewDidLoad() {
@@ -24,6 +26,8 @@ class Launch: UIViewController {
         super.viewDidLoad()
         
         ref = Database.database().reference()
+        
+        self.configureWatchKitSesstion()
 
         //Initialize a revealing Splash with with the iconImage, the initial size and the background color
         let revealingSplashView = RevealingSplashView(iconImage: UIImage(named: "roseIcon")!,iconInitialSize: CGSize(width: 108, height: 108), backgroundColor: #colorLiteral(red: 1, green: 0.5764705882, blue: 0.5764705882, alpha: 0.9))
@@ -70,6 +74,7 @@ class Launch: UIViewController {
                     UserDefaults.standard.set(age, forKey: "age")
                     
                     if(uid != ""){
+                        setAuthWatch(value: "Yes")
                         
                         self.ref.child("stories").observeSingleEvent(of: .value, with: { (snapshot) in
                           let value = snapshot.value as? NSDictionary
@@ -92,8 +97,15 @@ class Launch: UIViewController {
         }
     }
     
+    func setAuthWatch(value: String){
+        if let validSession = self.session, validSession.isReachable {
+            let data: [String: Any] = ["Auth": value as Any]
+            validSession.sendMessage(data, replyHandler: nil, errorHandler: nil)
+        }
+    }
     
     func showMain() {
+        setAuthWatch(value: "Yes")
         let storyBoard : UIStoryboard = UIStoryboard(name: "Pink", bundle:nil)
         let nextViewController = storyBoard.instantiateViewController(withIdentifier: "Stories") as! Stories
         nextViewController.modalPresentationStyle = .fullScreen
@@ -104,6 +116,7 @@ class Launch: UIViewController {
     }
     
     func showAuth() {
+        setAuthWatch(value: "No")
         let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
         let nextViewController = storyBoard.instantiateViewController(withIdentifier: "GetStarted") as! GetStarted
         nextViewController.modalPresentationStyle = .fullScreen
@@ -111,4 +124,37 @@ class Launch: UIViewController {
     }
     
 
+}
+
+
+extension Launch: WCSessionDelegate {
+    
+    func configureWatchKitSesstion() {
+        if WCSession.isSupported() {
+            print("Session init")
+          session = WCSession.default
+          session?.delegate = self
+          session?.activate()
+        }
+    }
+    
+    func sessionDidBecomeInactive(_ session: WCSession) {
+    }
+      
+    func sessionDidDeactivate(_ session: WCSession) {
+    }
+
+    func session(_ session: WCSession, activationDidCompleteWith activationState: WCSessionActivationState, error: Error?) {
+    }
+
+    func session(_ session: WCSession, didReceiveMessage message: [String : Any]) {
+        let currentDateTime = Date()
+
+        let formatter = DateFormatter()
+        formatter.timeStyle = .medium
+        formatter.dateStyle = .medium
+        
+        self.ref.child("healthData").child(UserDefaults.standard.string(forKey: "uid")!).child(formatter.string(from: currentDateTime)).setValue(["Lump": message["Lump"], "Thickness or Swelling": message["Thickness"], "Skin Irritation": message["Irritation"], "Redness or Flaky Skin": message["Skin"], "Pain or General Discomfort": message["Pain"], "Eccentric Discharge": message["Discharge"]])
+    }
+    
 }

@@ -22,7 +22,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         self.configureWatchKitSesstion()
         
+        let uid = UserDefaults.standard.string(forKey: "uid")
+        
+        if ((uid) != nil) {
+            setAuthWatch(value: "Yes")
+        } else {
+            setAuthWatch(value: "No")
+        }
+        
         return true
+    }
+    
+    func setAuthWatch(value: String){
+        if let validSession = self.session, validSession.isReachable {
+            let data: [String: Any] = ["Auth": value as Any]
+            validSession.sendMessage(data, replyHandler: nil, errorHandler: nil)
+        }
     }
 
     // MARK: UISceneSession Lifecycle
@@ -62,6 +77,6 @@ extension AppDelegate: WCSessionDelegate {
     }
 
     func session(_ session: WCSession, didReceiveMessage message: [String : Any]) {
-        SVProgressHUD.show(withStatus: message.description)
+        SVProgressHUD.showSuccess(withStatus: "delegate got it")
     }
 }

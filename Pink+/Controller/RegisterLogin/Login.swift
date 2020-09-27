@@ -12,6 +12,7 @@ import FirebaseDatabase
 import SwiftValidator
 import CDAlertView
 import SVProgressHUD
+import WatchConnectivity
 
 class Login: UIViewController, ValidationDelegate {
     
@@ -24,12 +25,16 @@ class Login: UIViewController, ValidationDelegate {
     
     var ref: DatabaseReference!
     
+    var session: WCSession?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setupToolbar()
         
         ref = Database.database().reference()
+        
+        self.configureWatchKitSesstion()
         
         // call the 'keyboardWillShow' function when the view controller receive the notification that a keyboard is going to be shown
             NotificationCenter.default.addObserver(self, selector: #selector(Login.keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
@@ -120,6 +125,8 @@ class Login: UIViewController, ValidationDelegate {
                         let age = value["Age"] as! String
                         UserDefaults.standard.set(age, forKey: "age")
                         
+                        self!.setAuthWatch(value: "Yes")
+                        
                         SVProgressHUD.showSuccess(withStatus: "Authentication successful! Welcome back.")
                         let storyBoard : UIStoryboard = UIStoryboard(name: "Pink", bundle:nil)
                         let nextViewController = storyBoard.instantiateViewController(withIdentifier: "Stories") as! Stories
@@ -150,5 +157,43 @@ extension Login {
         let doneAction = CDAlertViewAction(title: "Sure thing! 🤘")
         alert.add(action: doneAction)
         alert.show()
+    }
+}
+
+extension Login: WCSessionDelegate {
+    
+    func configureWatchKitSesstion() {
+        if WCSession.isSupported() {
+            print("Session init")
+          session = WCSession.default
+          session?.delegate = self
+          session?.activate()
+        }
+    }
+    
+    func sessionDidBecomeInactive(_ session: WCSession) {
+    }
+      
+    func sessionDidDeactivate(_ session: WCSession) {
+    }
+
+    func session(_ session: WCSession, activationDidCompleteWith activationState: WCSessionActivationState, error: Error?) {
+    }
+
+    func session(_ session: WCSession, didReceiveMessage message: [String : Any]) {
+        let currentDateTime = Date()
+
+        let formatter = DateFormatter()
+        formatter.timeStyle = .medium
+        formatter.dateStyle = .medium
+        
+        self.ref.child("healthData").child(UserDefaults.standard.string(forKey: "uid")!).child(formatter.string(from: currentDateTime)).setValue(["Lump": message["Lump"], "Thickness or Swelling": message["Thickness"], "Skin Irritation": message["Irritation"], "Redness or Flaky Skin": message["Skin"], "Pain or General Discomfort": message["Pain"], "Eccentric Discharge": message["Discharge"]])
+    }
+    
+    func setAuthWatch(value: String){
+        if let validSession = self.session, validSession.isReachable {
+            let data: [String: Any] = ["Auth": value as Any]
+            validSession.sendMessage(data, replyHandler: nil, errorHandler: nil)
+        }
     }
 }

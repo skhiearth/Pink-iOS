@@ -28,6 +28,8 @@ class SymptomTracking: WKInterfaceController {
     var pain = "No"
     var discharge = "No"
     
+    var auth = "No"
+    
     override func awake(withContext context: Any?) {
       super.awake(withContext: context)
         session.delegate = self
@@ -83,14 +85,27 @@ class SymptomTracking: WKInterfaceController {
     }
     
     @IBAction func buttonPressed() {
-        print("Button Pressed")
-        let data = ["Lump": lump,
-                                   "Thickness": thickness,
-                                   "Irritation": irritation,
-                                   "Skin": skin,
-                                   "Pain": pain,
-                                   "Discharge": discharge] //Create your dictionary as per uses
-        session.sendMessage(data, replyHandler: nil, errorHandler: nil)
+        if(auth == "No") {
+            let action1 = WKAlertAction.init(title: "Dismiss", style:.cancel) {
+                
+            }
+                    
+            let action2 = WKAlertAction.init(title: "Okay", style:.default) {
+                
+            }
+            
+            presentAlert(withTitle: "Oops", message: "You're not logged in. Please login using the iOS or iPadOS app.", preferredStyle:.actionSheet, actions: [action1,action2])
+        } else {
+            let data = ["Lump": lump,
+                                       "Thickness": thickness,
+                                       "Irritation": irritation,
+                                       "Skin": skin,
+                                       "Pain": pain,
+                                       "Discharge": discharge] //Create your dictionary as per uses
+            print(data)
+            session.sendMessage(data, replyHandler: nil, errorHandler: nil)
+        }
+
     }
 }
 
@@ -100,6 +115,6 @@ extension SymptomTracking: WCSessionDelegate {
   }
   
   func session(_ session: WCSession, didReceiveMessage message: [String : Any]) {
-    print("received data: \(message)")
+    auth = message["Auth"] as! String
   }
 }
