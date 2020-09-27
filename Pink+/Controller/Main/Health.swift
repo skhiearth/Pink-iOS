@@ -39,6 +39,10 @@ class Health: UIViewController {
         userLabel.text = "Hi, \(UserDefaults.standard.string(forKey: "name") ?? "")"
     }
     
+    @IBAction func reportEvalButtonPressed(_ sender: Any) {
+        
+    }
+    
     func updateHealthData() {
         // get the current date and time
         let currentDateTime = Date()

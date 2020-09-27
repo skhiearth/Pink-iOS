@@ -34,6 +34,7 @@
 		D066294C251E7D90009F8BE4 /* SupportGroupChat.swift in Sources */ = {isa = PBXBuildFile; fileRef = D066294B251E7D90009F8BE4 /* SupportGroupChat.swift */; };
 		D074B602251697F0007F6D80 /* Launch.swift in Sources */ = {isa = PBXBuildFile; fileRef = D074B601251697F0007F6D80 /* Launch.swift */; };
 		D074B60A2516A43D007F6D80 /* Health.swift in Sources */ = {isa = PBXBuildFile; fileRef = D074B6092516A43D007F6D80 /* Health.swift */; };
+		D07C5B622520D49B00E48577 /* Doctor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D07C5B612520D49A00E48577 /* Doctor.swift */; };
 		D07D6F46251F11030026894E /* SupportGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = D07D6F45251F11030026894E /* SupportGroup.swift */; };
 		D089B56825206EB700A14417 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D089B56625206EB700A14417 /* Interface.storyboard */; };
 		D089B56A25206EB900A14417 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D089B56925206EB900A14417 /* Assets.xcassets */; };
@@ -162,6 +163,7 @@
 		D066294B251E7D90009F8BE4 /* SupportGroupChat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupportGroupChat.swift; sourceTree = "<group>"; };
 		D074B601251697F0007F6D80 /* Launch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Launch.swift; sourceTree = "<group>"; };
 		D074B6092516A43D007F6D80 /* Health.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Health.swift; sourceTree = "<group>"; };
+		D07C5B612520D49A00E48577 /* Doctor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Doctor.swift; sourceTree = "<group>"; };
 		D07D6F45251F11030026894E /* SupportGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupportGroup.swift; sourceTree = "<group>"; };
 		D089B56425206EB700A14417 /* Pink+ Tracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Pink+ Tracker.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D089B56725206EB700A14417 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
@@ -413,6 +415,7 @@
 				D0620A34251F7ADE00C2A761 /* Collaborate.swift */,
 				D0620A46251F9AB600C2A761 /* CollaborateDetail.swift */,
 				D0620A4B251FA0A500C2A761 /* CollabChat.swift */,
+				D07C5B612520D49A00E48577 /* Doctor.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -731,6 +734,7 @@
 				D01D88AB25152F320054586A /* AppDelegate.swift in Sources */,
 				D074B60A2516A43D007F6D80 /* Health.swift in Sources */,
 				D0662947251E7A8B009F8BE4 /* Constants.swift in Sources */,
+				D07C5B622520D49B00E48577 /* Doctor.swift in Sources */,
 				D0BD54C62517DEAF00B1C5E9 /* StoryCell.swift in Sources */,
 				D01C0BB22515F1AC0089F2CD /* GetStarted.swift in Sources */,
 				D01C0BBC2515F4D80089F2CD /* RegisterTwo.swift in Sources */,
