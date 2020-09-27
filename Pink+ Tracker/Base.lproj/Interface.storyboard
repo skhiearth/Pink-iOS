@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="17156" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AgC-eL-Hgc">
+    <device id="watch40"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="17034"/>
+    </dependencies>
+    <scenes>
+        <!--Tracker-->
+        <scene sceneID="aou-V4-d1y">
+            <objects>
+                <controller identifier="Tracker" hidesWhenLoading="NO" id="AgC-eL-Hgc" customClass="SymptomTracking" customModule="Pink__Tracker" customModuleProvider="target">
+                    <items>
+                        <group width="1" alignment="left" id="715-UM-NdY">
+                            <items>
+                                <label alignment="left" text="Symptom Logging" textAlignment="left" minimumScaleFactor="0.69999999999999996" id="Dpi-bR-ZoZ">
+                                    <fontDescription key="font" style="UICTFontTextStyleHeadline"/>
+                                </label>
+                            </items>
+                            <edgeInsets key="margins" left="0.0" right="0.0" top="6" bottom="0.0"/>
+                        </group>
+                        <group width="1" alignment="left" id="paf-ta-LF8">
+                            <items>
+                                <group alignment="left" layout="vertical" spacing="8" id="vdE-ju-Wbp">
+                                    <items>
+                                        <switch width="1" alignment="left" title="Lump" id="U5t-0m-bGk"/>
+                                        <switch width="1" alignment="left" title="Thickness or Swelling" id="g27-zf-JRJ"/>
+                                        <switch width="1" alignment="left" title="Skin Irritation" id="rA3-E2-dHr"/>
+                                        <switch width="1" alignment="left" title="Redness or Flaky Skin" id="YOn-OU-eW9"/>
+                                        <switch width="1" alignment="left" title="Pain/General Discomfort" id="XGQ-ic-aJR"/>
+                                        <switch width="1" alignment="left" title="Eccentric Discharge" id="Wn6-hv-6NQ"/>
+                                    </items>
+                                    <edgeInsets key="margins" left="0.0" right="0.0" top="9" bottom="10"/>
+                                </group>
+                            </items>
+                        </group>
+                        <group width="1" alignment="left" id="tLQ-FJ-wm5">
+                            <items>
+                                <button width="1" alignment="left" title="Log Symptoms" id="odj-Dj-4TW">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="backgroundColor" red="0.80948323010000001" green="0.49820291999999999" blue="0.50195229050000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    <connections>
+                                        <action selector="buttonPressed" destination="AgC-eL-Hgc" id="drE-VB-LaD"/>
+                                    </connections>
+                                </button>
+                            </items>
+                        </group>
+                    </items>
+                    <connections>
+                        <outlet property="dischargeSwitch" destination="Wn6-hv-6NQ" id="aFs-MC-RQu"/>
+                        <outlet property="irritationSwift" destination="rA3-E2-dHr" id="daz-Rt-Vvb"/>
+                        <outlet property="logSymptomButton" destination="odj-Dj-4TW" id="Olb-XK-gpM"/>
+                        <outlet property="lumpSwitch" destination="U5t-0m-bGk" id="QM7-I6-mFA"/>
+                        <outlet property="painSwitch" destination="XGQ-ic-aJR" id="n65-2e-FHT"/>
+                        <outlet property="skinSwitch" destination="YOn-OU-eW9" id="zSk-xh-XSW"/>
+                        <outlet property="symptomLoggingLabel" destination="Dpi-bR-ZoZ" id="Ph3-l9-sjZ"/>
+                        <outlet property="thicknessSwitch" destination="g27-zf-JRJ" id="NIm-dY-zNX"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="-136" y="-20.487179487179489"/>
+        </scene>
+    </scenes>
+</document>
