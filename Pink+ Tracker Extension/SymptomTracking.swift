@@ -102,8 +102,18 @@ class SymptomTracking: WKInterfaceController {
                                        "Skin": skin,
                                        "Pain": pain,
                                        "Discharge": discharge] //Create your dictionary as per uses
-            print(data)
             session.sendMessage(data, replyHandler: nil, errorHandler: nil)
+            
+            let action1 = WKAlertAction.init(title: "Dismiss", style:.cancel) {
+                
+            }
+                    
+            let action2 = WKAlertAction.init(title: "Cool", style:.default) {
+                
+            }
+            
+            presentAlert(withTitle: "Symptoms Logged", message: "Your symptoms have been logged. You can share your symptom history with your contacts using the iOS app.", preferredStyle:.actionSheet, actions: [action1,action2])
+            
         }
 
     }
@@ -111,10 +121,10 @@ class SymptomTracking: WKInterfaceController {
 
 extension SymptomTracking: WCSessionDelegate {
   
-  func session(_ session: WCSession, activationDidCompleteWith activationState: WCSessionActivationState, error: Error?) {
-  }
-  
-  func session(_ session: WCSession, didReceiveMessage message: [String : Any]) {
-    auth = message["Auth"] as! String
-  }
+    func session(_ session: WCSession, activationDidCompleteWith activationState: WCSessionActivationState, error: Error?) {
+    }
+
+    func session(_ session: WCSession, didReceiveMessage message: [String : Any]) {
+        auth = message["Auth"] as! String
+    }
 }
