@@ -13,6 +13,7 @@ import FirebaseAuth
 import SwiftyJSON
 import FirebaseStorage
 import Alamofire
+import WatchConnectivity
 
 class Stories: UIViewController {
 
@@ -21,6 +22,8 @@ class Stories: UIViewController {
     @IBOutlet weak var educateView: UIView!
     @IBOutlet weak var storiesCollectionView: UICollectionView!
     @IBOutlet weak var campaignview: UIView!
+    @IBOutlet weak var healthView: UIView!
+    @IBOutlet weak var doctorView: UIView!
     
     var ref: DatabaseReference!
     
@@ -61,6 +64,7 @@ class Stories: UIViewController {
         
         shareView.isHidden = true
         collabView.isHidden = true
+        doctorView.isHidden = true
         self.newsTableView.isHidden = true
         
         newsTableView.delegate = self
@@ -88,12 +92,15 @@ class Stories: UIViewController {
         if(type=="Medical Professional"){
             collabView.isHidden = false
             campaignview.isHidden = true
+            healthView.isHidden = true
+            doctorView.isHidden = false
         }
         
         if(type=="Research Professional"){
             collabView.isHidden = false
             campaignview.isHidden = true
         }
+        
 //        "Survivor", "Medical Professional", "Research Professional", "Patient", "General Public"
     }
     
@@ -312,3 +319,4 @@ extension Stories: UITableViewDelegate, UITableViewDataSource {
         tableView.deselectRow(at: indexPath as IndexPath, animated: true)
     }
 }
+

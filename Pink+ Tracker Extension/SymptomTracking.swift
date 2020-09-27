@@ -113,7 +113,6 @@ class SymptomTracking: WKInterfaceController {
             }
             
             presentAlert(withTitle: "Symptoms Logged", message: "Your symptoms have been logged. You can share your symptom history with your contacts using the iOS app.", preferredStyle:.actionSheet, actions: [action1,action2])
-            
         }
 
     }

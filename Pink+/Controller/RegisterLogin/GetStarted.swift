@@ -8,6 +8,7 @@
 import UIKit
 import FirebaseAuth
 import FirebaseDatabase
+import SVProgressHUD
 
 class GetStarted: UIViewController {
     
@@ -16,7 +17,7 @@ class GetStarted: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
             
-        
+        SVProgressHUD.dismiss()
     }
     
     // MARK: IBAction

@@ -56,7 +56,7 @@
                                             <constraint firstAttribute="width" constant="67" id="w1Y-Jw-ylf"/>
                                         </constraints>
                                     </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Share your story." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AyP-m0-gX3">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Together. Stronger." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AyP-m0-gX3">
                                         <rect key="frame" x="55" y="278" width="143" height="20"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
@@ -169,13 +169,6 @@ and professionals. </string>
                                             <constraint firstAttribute="height" constant="47" id="kTy-cv-DC2"/>
                                         </constraints>
                                     </imageView>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="elc" translatesAutoresizingMaskIntoConstraints="NO" id="hXM-jD-uTw">
-                                        <rect key="frame" x="174" y="36" width="66" height="61"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="61" id="dZK-T5-Few"/>
-                                            <constraint firstAttribute="width" constant="66" id="h5n-Kj-3xL"/>
-                                        </constraints>
-                                    </imageView>
                                 </subviews>
                                 <color key="backgroundColor" red="0.80948323010000001" green="0.49820291999999999" blue="0.50195229050000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
@@ -189,8 +182,6 @@ and professionals. </string>
                                     <constraint firstItem="AyP-m0-gX3" firstAttribute="leading" secondItem="UtL-pQ-eYq" secondAttribute="leading" constant="55" id="QBk-3I-bLw"/>
                                     <constraint firstItem="9nZ-7g-Dkf" firstAttribute="top" secondItem="UtL-pQ-eYq" secondAttribute="top" constant="213" id="UTx-7O-Rmw"/>
                                     <constraint firstItem="Zxf-VF-iSN" firstAttribute="top" secondItem="UtL-pQ-eYq" secondAttribute="top" constant="147" id="Vdu-Mk-Cvs"/>
-                                    <constraint firstItem="hXM-jD-uTw" firstAttribute="centerX" secondItem="UtL-pQ-eYq" secondAttribute="centerX" id="WFE-iQ-dOL"/>
-                                    <constraint firstItem="hXM-jD-uTw" firstAttribute="top" secondItem="UtL-pQ-eYq" secondAttribute="top" constant="36" id="ZNX-QP-dFf"/>
                                     <constraint firstItem="WAS-Up-MqZ" firstAttribute="leading" secondItem="UtL-pQ-eYq" secondAttribute="leading" constant="77" id="a22-LZ-u0o"/>
                                     <constraint firstAttribute="bottom" secondItem="ZTZ-BJ-nOG" secondAttribute="bottom" constant="174" id="owY-EK-Sha"/>
                                     <constraint firstItem="AyP-m0-gX3" firstAttribute="top" secondItem="2Qw-Xk-7f1" secondAttribute="bottom" constant="55" id="pnW-5J-BC3"/>
@@ -1040,7 +1031,6 @@ and professionals. </string>
         <image name="PageScroll3" width="52" height="10"/>
         <image name="Pink+" width="185" height="74"/>
         <image name="dottedRectangle" width="260" height="315"/>
-        <image name="elc" width="1198" height="719"/>
         <image name="fadedCircle" width="193" height="384"/>
         <image name="fadedCircleTopDown" width="275" height="58"/>
         <image name="loginArtwork" width="269" height="398"/>
