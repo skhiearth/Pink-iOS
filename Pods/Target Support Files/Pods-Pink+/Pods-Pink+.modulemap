@@ -1,0 +1,6 @@
+framework module Pods_Pink_ {
+  umbrella header "Pods-Pink+-umbrella.h"
+
+  export *
+  module * { export * }
+}

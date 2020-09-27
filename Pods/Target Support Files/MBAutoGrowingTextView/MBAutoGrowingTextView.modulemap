@@ -1,0 +1,6 @@
+framework module MBAutoGrowingTextView {
+  umbrella header "MBAutoGrowingTextView-umbrella.h"
+
+  export *
+  module * { export * }
+}
