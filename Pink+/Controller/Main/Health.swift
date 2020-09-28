@@ -74,6 +74,7 @@ class Health: UIViewController, UIImagePickerControllerDelegate, UINavigationCon
                                                                         "Name": username,
                                                                         "Result": "None",
                                                                         "Age": age,
+                                                                        "Remarks": "None",
                                                                         "Media": url])
                         SVProgressHUD.dismiss()
                         let alert = CDAlertView(title: "Thank you!", message: "Your report has been uploaded. A medical expert will examine it themselves and via our ML evaluator. We will let you know.", type: .success)
@@ -159,15 +160,17 @@ class Health: UIViewController, UIImagePickerControllerDelegate, UINavigationCon
                             // Then make sure you get the actual key/value types you expect
                             let pred = json["Prediction"] as? String
                             if(pred=="Benign"){
-                                let alert = CDAlertView(title: "Benign", message: "According to our ML evaluation, you don't seem to have presence of a cancerous breast cancer tumor. This model doesn't have an extraordinally high precision for benign tumors. We suggest you to consult a doctor at the earliest for clarification or upload get your cytology reports examined.", type: .success)
+                                let alert = CDAlertView(title: "Benign", message: "According to our ML evaluation, you don't seem to have presence of a cancerous breast cancer tumor. This model doesn't have an extraordinally high precision, but good recall for benign tumors. We suggest you to consult a doctor at the earliest for clarification or upload get your cytology reports examined.", type: .success)
                                 let doneAction = CDAlertViewAction(title: "Thanks! 😁")
                                 alert.add(action: doneAction)
                                 alert.show()
+                                AudioServicesPlayAlertSound(SystemSoundID(kSystemSoundID_Vibrate))
                             } else {
-                                let alert = CDAlertView(title: "Malignant", message: "According to our ML evaluation, it seems like there might be traces of a cancerous breast cancer tumor. For clarification, please get a bioposy and mammography checked by an expert. Pink+ provides Cytology evaluation, and mammography evaluation is coming soon. We have a high precision for detecting this, so instead of being anxious, you should be relaxed and confident on possibly detecting it early. Please consult an expert at the earliest for the next course of action.", type: .notification)
+                                let alert = CDAlertView(title: "Malignant", message: "According to our ML evaluation, it seems like there might be traces of a cancerous breast cancer tumor. For clarification, please get a bioposy and mammography checked by an expert. Pink+ provides Cytology evaluation, and mammography evaluation is coming soon. We have a high precision and recall for detecting this, so instead of being anxious, you should be relaxed and confident on possibly detecting it early. Please consult an expert at the earliest for the next course of action.", type: .notification)
                                 let doneAction = CDAlertViewAction(title: "Sure!")
                                 alert.add(action: doneAction)
                                 alert.show()
+                                AudioServicesPlayAlertSound(SystemSoundID(kSystemSoundID_Vibrate))
                             }
                             
                             break
@@ -251,6 +254,7 @@ class Health: UIViewController, UIImagePickerControllerDelegate, UINavigationCon
                                                                                                                                                   "Pain or General Discomfort": self.pain,
                                                                                                                                                   "Eccentric Discharge": self.discharge])
         
+        AudioServicesPlayAlertSound(SystemSoundID(kSystemSoundID_Vibrate))
         let alert = CDAlertView(title: "Logged!", message: "Your symptoms were logged on \(formatter.string(from: currentDateTime)). You can share your symptom history with your healthcare provider if you want.", type: .success)
         let doneAction = CDAlertViewAction(title: "Noted! 😁")
         alert.add(action: doneAction)
@@ -288,6 +292,7 @@ class Health: UIViewController, UIImagePickerControllerDelegate, UINavigationCon
                 let doneAction = CDAlertViewAction(title: "Sure! 💪")
                 alert.add(action: doneAction)
                 alert.show()
+                AudioServicesPlayAlertSound(SystemSoundID(kSystemSoundID_Vibrate))
             }
           }) { (error) in
             print(error.localizedDescription)

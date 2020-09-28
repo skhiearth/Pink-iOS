@@ -14,6 +14,7 @@ import SwiftyJSON
 import FirebaseStorage
 import Alamofire
 import WatchConnectivity
+import AudioToolbox
 
 class Stories: UIViewController {
 
@@ -33,6 +34,12 @@ class Stories: UIViewController {
     var storyContentDict:[Int: String] = [:]
     var storyImagesDict:[Int: String] = [:]
     var storyImages:[Int: UIImage] = [:]
+
+    var cytologyResult:[Int: String] = [:]
+    var remarks:[Int: String] = [:]
+    
+    var selectedRemarks = ""
+    var selectedresults = ""
     
     var newsTitlesDict:[Int: String] = [:]
     var newsAuthorDict:[Int: String] = [:]
@@ -85,6 +92,7 @@ class Stories: UIViewController {
         
         
         if(type=="Survivor"){
+            getCytology()
             educateView.isHidden = true
             shareView.isHidden = false
         }
@@ -101,6 +109,16 @@ class Stories: UIViewController {
             campaignview.isHidden = true
         }
         
+        if(type=="Patient"){
+            getCytology()
+        }
+        
+        if(type=="General Public"){
+            getCytology()
+        }
+        
+        
+        
 //        "Survivor", "Medical Professional", "Research Professional", "Patient", "General Public"
     }
     
@@ -110,6 +128,38 @@ class Stories: UIViewController {
         let nextViewController = storyBoard.instantiateViewController(withIdentifier: "Login") as! Login
         nextViewController.modalPresentationStyle = .fullScreen
         self.present(nextViewController, animated:true, completion:nil)
+    }
+    
+    func getCytology(){
+        ref.child("cytologyreports").observeSingleEvent(of: .value, with: { (snapshot) in
+          let value = snapshot.value as? NSDictionary
+            if ((value) != nil) {
+                let json = JSON(value!)
+                print("JSON: \(json)")
+                    for (key, subjson):(String, JSON) in json {
+                        if(key == UserDefaults.standard.string(forKey: "name")){
+                            self.selectedresults = subjson["Result"].stringValue
+                            self.selectedRemarks = subjson["Remarks"].stringValue
+                        }
+                    }
+                
+            }
+            if(self.selectedresults == "Benign"){
+                let alert = CDAlertView(title: "Cytology Report Examined: Benign", message: "According to our ML evaluation, you don't seem to have presence of a cancerous breast cancer tumor. We can proudly state that we have an accuracy score of 93% and a very high precision and recall for detection non-cancerous cells. This, however, shouldn't be treated as a fail-proof result. We advice you to consult a medical expert for cross-verification. The linked remarks from the expert are: \(self.selectedRemarks)", type: .success)
+                let doneAction = CDAlertViewAction(title: "Sure! 💪")
+                alert.add(action: doneAction)
+                alert.show()
+                AudioServicesPlayAlertSound(SystemSoundID(kSystemSoundID_Vibrate))
+            } else if(self.selectedresults == "Malignant"){
+                let alert = CDAlertView(title: "Cytology Report Examined: Malignant", message: "According to our ML evaluation, it seems like there might be traces of a cancerous breast cancer tumor. We have a high precision, recall and accuracy for detecting this, so instead of being anxious, you should be relaxed and confident on possibly detecting it early. Please consult an expert at the earliest for the next course of action. The linked remarks from the expert are: \(self.selectedRemarks)", type: .notification)
+                let doneAction = CDAlertViewAction(title: "Okay!")
+                alert.add(action: doneAction)
+                alert.show()
+                AudioServicesPlayAlertSound(SystemSoundID(kSystemSoundID_Vibrate))
+            }
+          }) { (error) in
+            SVProgressHUD.dismiss()
+        }
     }
     
     func getNews() {
@@ -159,6 +209,7 @@ class Stories: UIViewController {
                     let doneAction = CDAlertViewAction(title: "Sure! 💪")
                     alert.add(action: doneAction)
                     alert.show()
+                    AudioServicesPlayAlertSound(SystemSoundID(kSystemSoundID_Vibrate))
                 }
               }
         }
@@ -225,6 +276,7 @@ extension Stories: UICollectionViewDelegate, UICollectionViewDataSource {
               }) { (error) in
                 SVProgressHUD.showError(withStatus: error.localizedDescription)
                 print(error.localizedDescription)
+                AudioServicesPlayAlertSound(SystemSoundID(kSystemSoundID_Vibrate))
             }
             
             let destinationVC = segue.destination as! Story

@@ -19,18 +19,23 @@ class Doctor: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     var cytologyNameDict:[Int: String] = [:]
     var cytologyAgeDict:[Int: String] = [:]
+    var cytologyimageurl:[Int: String] = [:]
     var cytologyImages:[Int: UIImage] = [:]
     var cytologyResult:[Int: String] = [:]
+    var remarks:[Int: String] = [:]
     
     var selectedName = ""
     var selectedAge = ""
     var selectedImage: UIImage?
+    var selectedImageurl = ""
+    var selectedRemarks = ""
     
     var radiusField: UITextField!
     var textureField: UITextField!
     var perimeterField: UITextField!
     var areaField: UITextField!
     var smoothnessField: UITextField!
+    var remarkField: UITextField!
     
     var ref: DatabaseReference!
     
@@ -44,7 +49,11 @@ class Doctor: UIViewController, UITableViewDelegate, UITableViewDataSource {
         tableView.delegate = self
         tableView.dataSource = self
     }
-
+    
+    @IBAction func mlrecurrenceBtnPressed(_ sender: Any) {
+        
+    }
+    
     @IBAction func symptomButtonPressed(_ sender: Any) {
         
     }
@@ -70,6 +79,7 @@ extension Doctor {
         cell?.ageLabel.text = "Age: \(cytologyAgeDict[indexPath.row]!)"
         cell?.currentResultLbl.text = "Current result: \(cytologyResult[indexPath.row]!)"
         cell?.cytologyImage.image = UIImage(named: "educateDef")
+        cell?.remarksLbl.text = "Remarks: \(remarks[indexPath.row] ?? "None")"
         
         let storage = Storage.storage()
         let storageRef = storage.reference()
@@ -92,16 +102,28 @@ extension Doctor {
         selectedName = cytologyNameDict[indexPath.row]!
         selectedAge = cytologyAgeDict[indexPath.row]!
         selectedImage = cytologyImages[indexPath.row]!
+        selectedImageurl = cytologyimageurl[indexPath.row]!
         
         self.displayForm(message: "Please enter the cytology report readings to get a ML-based evaluation for possible presence of Breast Cancer.")
     }
     
     func displayForm(message:String){
             //create alert
-            let alert = UIAlertController(title: "Blood Test Evaluation", message: message, preferredStyle: .alert)
-            
+            let alert = UIAlertController(title: "ML Cytology Report Evaluation", message: message, preferredStyle: .alert)
+                
             //create cancel button
             let cancelAction = UIAlertAction(title: "Cancel" , style: .cancel)
+        
+            let imageAction = UIAlertAction(title: "See Report", style: .default) { (action) in
+                if let url = URL(string: self.selectedImageurl) {
+                    UIApplication.shared.open(url)
+                } else {
+                    let alert = CDAlertView(title: "Oops, something's not right!", message: "Can't open this image. Please try again later.", type: .error)
+                    let doneAction = CDAlertViewAction(title: "Okay! 💪")
+                    alert.add(action: doneAction)
+                    alert.show()
+                }
+            }
             
             //create save button
             let saveAction = UIAlertAction(title: "Submit", style: .default) { (action) -> Void in
@@ -128,7 +150,6 @@ extension Doctor {
                 let area: String! = self.areaField.text!
                 let smoothness: String! = self.smoothnessField.text!
                 
-                
                 let stringToPass = "\(radius ?? ""),\(texture ?? ""),\(perimeter ?? ""),\(area ?? ""),\(smoothness ?? "")"
                 
                 print(stringToPass)
@@ -150,16 +171,26 @@ extension Doctor {
 
                             // Then make sure you get the actual key/value types you expect
                             let pred = json["Prediction"] as? String
-                            if(pred=="0"){
-                                let alert = CDAlertView(title: "Benign", message: "According to our ML evaluation, you don't seem to have presence of a cancerous breast cancer tumor. We can proudly state that we have an accuracy score of 93% and a very high precision for detection non-cancerous cells. This, however, shouldn't be treated as a fail-proof result. We advice you to consule a medical expert for cross-verification", type: .success)
+                            if(pred=="Benign"){
+                                let alert = CDAlertView(title: "Benign", message: "According to our ML evaluation, we don't seem to detect a presence of cancerous breast cancer tumor. We can proudly state that we have an accuracy score of 93% and a very high precision and recall for detection non-cancerous cells. This, however, shouldn't be treated as a fail-proof result. We advice you cross-verify.", type: .success)
+                                var remarks = "None"
+                                remarks = self.remarkField.text ?? "None"
+                                self.ref.child("cytologyreports/\(self.selectedName)/Result").setValue("Benign")
+                                self.ref.child("cytologyreports/\(self.selectedName)/Remarks").setValue(remarks)
                                 let doneAction = CDAlertViewAction(title: "Thanks! 😁")
                                 alert.add(action: doneAction)
                                 alert.show()
-                            } else {
-                                let alert = CDAlertView(title: "Malignant", message: "According to our ML evaluation, it seems like there might be traces of a cancerous breast cancer tumor. We have a high precision for detecting this, so instead of being anxious, you should be relaxed and confident on possibly detecting it early. Please consult an expert at the earliest for the next course of action.", type: .notification)
+                                self.getCytology()
+                            } else if(pred=="Malignant") {
+                                let alert = CDAlertView(title: "Malignant", message: "According to our ML evaluation, it seems like there might be traces of a cancerous breast cancer tumor. We have a high precision, recall and accuracy for detecting this. Cross-verification is highly recommended.", type: .notification)
+                                var remarks = "None"
+                                remarks = self.remarkField.text ?? "None"
+                                self.ref.child("users/\(self.selectedName)/Result").setValue("Malignant")
+                                self.ref.child("cytologyreports/\(self.selectedName)/Remarks").setValue(remarks)
                                 let doneAction = CDAlertViewAction(title: "Sure!")
                                 alert.add(action: doneAction)
                                 alert.show()
+                                self.getCytology()
                             }
                             
                             break
@@ -174,6 +205,7 @@ extension Doctor {
             
             //add button to alert
             alert.addAction(cancelAction)
+            alert.addAction(imageAction)
             alert.addAction(saveAction)
             
             alert.addTextField(configurationHandler: {(textField: UITextField!) in
@@ -206,6 +238,12 @@ extension Doctor {
                 self.smoothnessField = textField
             })
         
+            alert.addTextField(configurationHandler: {(textField: UITextField!) in
+                textField.placeholder = "Enter your remarks here"
+                textField.keyboardType = .default
+                self.remarkField = textField
+            })
+        
             self.present(alert, animated: true, completion: nil)
         }
     
@@ -227,6 +265,8 @@ extension Doctor {
                     self.cytologyNameDict[counter] = key
                     self.cytologyAgeDict[counter] = subjson["Age"].stringValue
                     self.cytologyResult[counter] = subjson["Result"].stringValue
+                    self.cytologyimageurl[counter] = subjson["Media"].stringValue
+                    self.remarks[counter] = subjson["Remarks"].stringValue
                     counter = counter + 1
                     
                     self.tableView.isHidden = false

@@ -109,6 +109,7 @@ class Share: UIViewController, UIImagePickerControllerDelegate, UINavigationCont
                         SVProgressHUD.dismiss()
                             let alert = CDAlertView(title: "Thank you!", message: "Stories like that make the difference.", type: .success)
                             alert.show()
+                        AudioServicesPlayAlertSound(SystemSoundID(kSystemSoundID_Vibrate))
                         
                         self.shareBtn.isEnabled = true
                         

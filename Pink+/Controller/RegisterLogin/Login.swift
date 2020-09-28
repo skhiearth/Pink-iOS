@@ -134,6 +134,7 @@ class Login: UIViewController, ValidationDelegate {
                         self!.present(nextViewController, animated:true, completion:nil)
                         
                       }) { (error) in
+                        SVProgressHUD.showError(withStatus: error.localizedDescription)
                         print(error.localizedDescription)
                     }
                 }

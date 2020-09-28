@@ -94,6 +94,7 @@ class Story: UIViewController {
         let doneAction = CDAlertViewAction(title: "Sure! 💪")
         alert.add(action: doneAction)
         alert.show()
+        AudioServicesPlayAlertSound(SystemSoundID(kSystemSoundID_Vibrate))
         
         checkLikes()
         imageHandling()

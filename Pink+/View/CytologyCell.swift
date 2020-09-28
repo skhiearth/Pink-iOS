@@ -14,6 +14,7 @@ class CytologyCell: UITableViewCell {
     @IBOutlet weak var ageLabel: UILabel!
     @IBOutlet weak var mlEval: UIButton!
     @IBOutlet weak var currentResultLbl: UILabel!
+    @IBOutlet weak var remarksLbl: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
