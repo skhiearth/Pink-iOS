@@ -23,6 +23,7 @@
 		D01D88B725152F340054586A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D01D88B525152F340054586A /* LaunchScreen.storyboard */; };
 		D01D88C225152F340054586A /* Pink_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D01D88C125152F340054586A /* Pink_Tests.swift */; };
 		D01D88CD25152F340054586A /* Pink_UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D01D88CC25152F340054586A /* Pink_UITests.swift */; };
+		D02A389D25221E6200EBB013 /* CytologyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D02A389C25221E6200EBB013 /* CytologyCell.swift */; };
 		D02D16AC2515FEBA00F8CDA8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D02D16AA2515FEBA00F8CDA8 /* Main.storyboard */; };
 		D0620A35251F7ADE00C2A761 /* Collaborate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0620A34251F7ADE00C2A761 /* Collaborate.swift */; };
 		D0620A3A251F880700C2A761 /* CollabCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0620A39251F880700C2A761 /* CollabCellTableViewCell.swift */; };
@@ -151,6 +152,7 @@
 		D01D88C825152F340054586A /* Pink+UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Pink+UITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D01D88CC25152F340054586A /* Pink_UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pink_UITests.swift; sourceTree = "<group>"; };
 		D01D88CE25152F340054586A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D02A389C25221E6200EBB013 /* CytologyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CytologyCell.swift; sourceTree = "<group>"; };
 		D02D16AB2515FEBA00F8CDA8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D0620A34251F7ADE00C2A761 /* Collaborate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Collaborate.swift; sourceTree = "<group>"; };
 		D0620A39251F880700C2A761 /* CollabCellTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollabCellTableViewCell.swift; sourceTree = "<group>"; };
@@ -338,6 +340,7 @@
 				D0A19A962519CFFE0007F672 /* EducateCell.swift */,
 				D0F3ED1C251C8F5800C32538 /* NewsCell.swift */,
 				D0620A39251F880700C2A761 /* CollabCellTableViewCell.swift */,
+				D02A389C25221E6200EBB013 /* CytologyCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -740,6 +743,7 @@
 				D01C0BBC2515F4D80089F2CD /* RegisterTwo.swift in Sources */,
 				D0A95C492518860A008FB0F9 /* Story.swift in Sources */,
 				D066290B251E7373009F8BE4 /* Chat.swift in Sources */,
+				D02A389D25221E6200EBB013 /* CytologyCell.swift in Sources */,
 				D0DCCBA8251B304800DF6007 /* CampaignData.swift in Sources */,
 				D092C54825191C1C006BFA32 /* AddEducationContent.swift in Sources */,
 				D01C0BBE2515F4E60089F2CD /* RegisterThree.swift in Sources */,

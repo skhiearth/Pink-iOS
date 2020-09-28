@@ -13,8 +13,9 @@ import SwiftyJSON
 import WatchConnectivity
 import Alamofire
 import SVProgressHUD
+import MobileCoreServices
 
-class Health: UIViewController {
+class Health: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
     @IBOutlet weak var userLabel: UILabel!
     @IBOutlet weak var lumpButton: UIButton!
@@ -57,7 +58,27 @@ class Health: UIViewController {
         }))
         
         alert.addAction(UIAlertAction(title: "Cytology Reports", style: .default, handler: { (_) in
-            
+            ImagePickerManager().pickImage(self){ image in
+                if let data = image.pngData() {
+                    
+                    let username = UserDefaults.standard.string(forKey: "name")
+                    let uid = UserDefaults.standard.string(forKey: "uid")
+                    let age = UserDefaults.standard.string(forKey: "age")
+                    
+                    let servername = username! + "cytology.png"
+                    
+                    FirebaseStorageManager().uploadImageData(data: data, serverFileName: servername) { (isSuccess, url) in
+                        self.ref.child("cytologyreports").child(UserDefaults.standard.string(forKey: "name")!).setValue(["uid": uid,
+                                                                        "Name": username,
+                                                                        "Result": "None",
+                                                                        "Age": age,
+                                                                        "Media": url])
+                        SVProgressHUD.dismiss()
+                        let alert = CDAlertView(title: "Thank you!", message: "Your report has been uploaded. A medical expert will examine it themselves and our ML evaluator. We will let you know.", type: .success)
+                        alert.show()
+                    }
+                }
+            }
         }))
 
         alert.addAction(UIAlertAction(title: "Dismiss", style: .cancel, handler: { (_) in
