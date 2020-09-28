@@ -61,6 +61,8 @@ class Health: UIViewController, UIImagePickerControllerDelegate, UINavigationCon
             ImagePickerManager().pickImage(self){ image in
                 if let data = image.pngData() {
                     
+                    SVProgressHUD.show(withStatus: "Uploading...")
+                    
                     let username = UserDefaults.standard.string(forKey: "name")
                     let uid = UserDefaults.standard.string(forKey: "uid")
                     let age = UserDefaults.standard.string(forKey: "age")
@@ -74,7 +76,9 @@ class Health: UIViewController, UIImagePickerControllerDelegate, UINavigationCon
                                                                         "Age": age,
                                                                         "Media": url])
                         SVProgressHUD.dismiss()
-                        let alert = CDAlertView(title: "Thank you!", message: "Your report has been uploaded. A medical expert will examine it themselves and our ML evaluator. We will let you know.", type: .success)
+                        let alert = CDAlertView(title: "Thank you!", message: "Your report has been uploaded. A medical expert will examine it themselves and via our ML evaluator. We will let you know.", type: .success)
+                        let doneAction = CDAlertViewAction(title: "Sure!")
+                        alert.add(action: doneAction)
                         alert.show()
                     }
                 }
