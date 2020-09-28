@@ -2,7 +2,7 @@
 //  RegisterOne.swift
 //  Pink+
 //
-//  Created by Utkarsh Sharma on 19/09/20.
+//  Created by Utkarsh Sharma on 25/09/20.
 //
 
 import UIKit

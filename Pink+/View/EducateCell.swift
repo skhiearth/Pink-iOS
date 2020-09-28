@@ -1,10 +1,3 @@
-//
-//  EducateCell.swift
-//  Pink+
-//
-//  Created by Utkarsh Sharma on 22/09/20.
-//
-
 import UIKit
 
 class EducateCell: UITableViewCell {
