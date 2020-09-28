@@ -37,6 +37,16 @@ class Doctor: UIViewController, UITableViewDelegate, UITableViewDataSource {
     var smoothnessField: UITextField!
     var remarkField: UITextField!
     
+    var agebracker: UITextField!
+    var mefalsepausefield: UITextField!
+    var tumor_size: UITextField!
+    var inv_falsedes: UITextField!
+    var capsField: UITextField!
+    var degmalig: UITextField!
+    var breastField: UITextField!
+    var quadField: UITextField!
+    var irradiat: UITextField!
+    
     var ref: DatabaseReference!
     
     override func viewDidLoad() {
@@ -51,7 +61,152 @@ class Doctor: UIViewController, UITableViewDelegate, UITableViewDataSource {
     }
     
     @IBAction func mlrecurrenceBtnPressed(_ sender: Any) {
+        //create alert
+        let alert = UIAlertController(title: "ML Recurrence Prediction", message: "Please enter the patient details to get a ML based prediction of recurrence of false recurrence events.", preferredStyle: .alert)
+            
+        //create cancel button
+        let cancelAction = UIAlertAction(title: "Cancel" , style: .cancel)
         
+        //create save button
+        let saveAction = UIAlertAction(title: "Evaluate", style: .default) { (action) -> Void in
+           //validation logic goes here
+            if((self.agebracker.text?.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty)!
+                || (self.mefalsepausefield.text?.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty)!
+                || (self.tumor_size.text?.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty)!
+                || (self.inv_falsedes.text?.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty)!
+                || (self.capsField.text?.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty)!
+                || (self.degmalig.text?.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty)!
+                || (self.breastField.text?.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty)!
+                || (self.quadField.text?.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty)!
+                || (self.irradiat.text?.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty)!){
+                self.agebracker.text = ""
+                self.mefalsepausefield.text = ""
+                self.tumor_size.text = ""
+                self.inv_falsedes.text = ""
+                self.capsField.text = ""
+                self.degmalig.text = ""
+                self.breastField.text = ""
+                self.quadField.text = ""
+                self.irradiat.text = ""
+                
+                SVProgressHUD.showError(withStatus: "Please enter values in all field.")
+            }
+            
+            // handle api here
+            
+            let age: String! = self.agebracker.text!
+            let mefalse: String! = self.mefalsepausefield.text!
+            let tumorsize: String! = self.tumor_size.text!
+            let invfal: String! = self.inv_falsedes.text!
+            let caps: String! = self.capsField.text!
+            let degma: String! = self.degmalig.text!
+            let breastsel: String! = self.breastField.text!
+            let quad: String! = self.quadField.text!
+            let irra: String! = self.irradiat.text!
+            
+            let stringToPass = "\(age ?? ""),\(mefalse ?? ""),\(tumorsize ?? ""),\(invfal ?? ""),\(caps ?? ""),\(degma ?? ""),\(breastsel ?? ""),\(quad ?? ""),\(irra ?? "")"
+            
+            print(stringToPass)
+            
+            let parameters = ["data": stringToPass]
+            
+            let url = "https://bcpd.herokuapp.com/predict"
+            
+            SVProgressHUD.show(withStatus: "Calculating....")
+            
+            AF.request(url, method: .post, parameters: parameters, encoding: JSONEncoding.default).responseJSON { [self] (response) in
+                switch (response.result) {
+                    case .success(let data):
+                        SVProgressHUD.dismiss()
+                        guard let json = data as? [String : AnyObject] else {
+                            SVProgressHUD.showError(withStatus: "Failed to get expected response from webserver.")
+                            return
+                        }
+
+                        // Then make sure you get the actual key/value types you expect
+                        let pred = json["Prediction"] as? String
+                        if(pred=="False Recurrence Event"){
+                            let alert = CDAlertView(title: "Benign", message: "According to our ML evaluation, we don't think this is a case of recurring events. Your cross-evaluation is highly meritted.", type: .success)
+                            let doneAction = CDAlertViewAction(title: "Thanks! 😁")
+                            alert.add(action: doneAction)
+                            alert.show()
+                            AudioServicesPlayAlertSound(SystemSoundID(kSystemSoundID_Vibrate))
+                        } else if(pred=="Recurrence Event") {
+                            let alert = CDAlertView(title: "Recurrence Event", message: "According to our ML evaluation, this could be a recurring event. Kindly cross verify and inform the related patient at the earliest.", type: .notification)
+                            let doneAction = CDAlertViewAction(title: "Sure!")
+                            alert.add(action: doneAction)
+                            alert.show()
+                            AudioServicesPlayAlertSound(SystemSoundID(kSystemSoundID_Vibrate))
+                        }
+                        
+                        break
+                    case .failure(let error):
+                        SVProgressHUD.dismiss()
+                        SVProgressHUD.showError(withStatus: "Something went wrong. It's not you, it's us.")
+                        print(Error.self)
+                }
+                SVProgressHUD.dismiss()
+            }
+        }
+        
+        //add button to alert
+        alert.addAction(cancelAction)
+        alert.addAction(saveAction)
+        
+        alert.addTextField(configurationHandler: {(textField: UITextField!) in
+            textField.placeholder = "Enter age bracket (e.g., 40-49)"
+            textField.keyboardType = .decimalPad
+            self.agebracker = textField
+        })
+        
+        alert.addTextField(configurationHandler: {(textField: UITextField!) in
+            textField.placeholder = "Enter mefalsepause (e.g., premefalse)"
+            textField.keyboardType = .decimalPad
+            self.mefalsepausefield = textField
+        })
+        
+        alert.addTextField(configurationHandler: {(textField: UITextField!) in
+            textField.placeholder = "Enter tumor-size (e.g., 15-19)"
+            textField.keyboardType = .decimalPad
+            self.tumor_size = textField
+        })
+    
+        alert.addTextField(configurationHandler: {(textField: UITextField!) in
+            textField.placeholder = "Enter inv-falsedes (e.g., 0-2)"
+            textField.keyboardType = .decimalPad
+            self.inv_falsedes = textField
+        })
+        
+        alert.addTextField(configurationHandler: {(textField: UITextField!) in
+            textField.placeholder = "Enter falsede-caps (e.g., True)"
+            textField.keyboardType = .decimalPad
+            self.capsField = textField
+        })
+    
+        alert.addTextField(configurationHandler: {(textField: UITextField!) in
+            textField.placeholder = "Enter deg-malig values (e.g., 3)"
+            textField.keyboardType = .default
+            self.degmalig = textField
+        })
+        
+        alert.addTextField(configurationHandler: {(textField: UITextField!) in
+            textField.placeholder = "Which is present in which breast? (e.g., right)"
+            textField.keyboardType = .decimalPad
+            self.breastField = textField
+        })
+    
+        alert.addTextField(configurationHandler: {(textField: UITextField!) in
+            textField.placeholder = "Enter breast quad (e.g., left_up)"
+            textField.keyboardType = .decimalPad
+            self.quadField = textField
+        })
+        
+        alert.addTextField(configurationHandler: {(textField: UITextField!) in
+            textField.placeholder = "Enter irradiat values (e.g., False)"
+            textField.keyboardType = .decimalPad
+            self.irradiat = textField
+        })
+        self.present(alert, animated: true, completion: nil)
     }
     
     @IBAction func symptomButtonPressed(_ sender: Any) {
