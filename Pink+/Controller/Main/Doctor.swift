@@ -104,13 +104,13 @@ class Doctor: UIViewController, UITableViewDelegate, UITableViewDataSource {
             let quad: String! = self.quadField.text!
             let irra: String! = self.irradiat.text!
             
-            let stringToPass = "\(age ?? ""),\(mefalse ?? ""),\(tumorsize ?? ""),\(invfal ?? ""),\(caps ?? ""),\(degma ?? ""),\(breastsel ?? ""),\(quad ?? ""),\(irra ?? "")"
+            let stringToPass = "\(age ?? ""),\(mefalse ?? ""),\(tumorsize ?? ""),\(invfal ?? ""),\(caps ?? ""),\(degma ?? ""),\(breastsel ?? ""),\(quad ?? ""),\(irra ?? ""), false-recurrence-events"
             
             print(stringToPass)
             
             let parameters = ["data": stringToPass]
             
-            let url = "https://bcpd.herokuapp.com/predict"
+            let url = "https://recurrence.herokuapp.com/predict"
             
             SVProgressHUD.show(withStatus: "Calculating....")
             
@@ -155,55 +155,55 @@ class Doctor: UIViewController, UITableViewDelegate, UITableViewDataSource {
         
         alert.addTextField(configurationHandler: {(textField: UITextField!) in
             textField.placeholder = "Enter age bracket (e.g., 40-49)"
-            textField.keyboardType = .decimalPad
+            textField.keyboardType = .numbersAndPunctuation
             self.agebracker = textField
         })
         
         alert.addTextField(configurationHandler: {(textField: UITextField!) in
-            textField.placeholder = "Enter mefalsepause (e.g., premefalse)"
-            textField.keyboardType = .decimalPad
+            textField.placeholder = "Mefalsepause (e.g., premefalse)"
+            textField.keyboardType = .default
             self.mefalsepausefield = textField
         })
         
         alert.addTextField(configurationHandler: {(textField: UITextField!) in
             textField.placeholder = "Enter tumor-size (e.g., 15-19)"
-            textField.keyboardType = .decimalPad
+            textField.keyboardType = .numbersAndPunctuation
             self.tumor_size = textField
         })
     
         alert.addTextField(configurationHandler: {(textField: UITextField!) in
             textField.placeholder = "Enter inv-falsedes (e.g., 0-2)"
-            textField.keyboardType = .decimalPad
+            textField.keyboardType = .numbersAndPunctuation
             self.inv_falsedes = textField
         })
         
         alert.addTextField(configurationHandler: {(textField: UITextField!) in
             textField.placeholder = "Enter falsede-caps (e.g., True)"
-            textField.keyboardType = .decimalPad
+            textField.keyboardType = .default
             self.capsField = textField
         })
     
         alert.addTextField(configurationHandler: {(textField: UITextField!) in
             textField.placeholder = "Enter deg-malig values (e.g., 3)"
-            textField.keyboardType = .default
+            textField.keyboardType = .decimalPad
             self.degmalig = textField
         })
         
         alert.addTextField(configurationHandler: {(textField: UITextField!) in
-            textField.placeholder = "Which is present in which breast? (e.g., right)"
-            textField.keyboardType = .decimalPad
+            textField.placeholder = "Present in which breast? (e.g., right)"
+            textField.keyboardType = .default
             self.breastField = textField
         })
     
         alert.addTextField(configurationHandler: {(textField: UITextField!) in
             textField.placeholder = "Enter breast quad (e.g., left_up)"
-            textField.keyboardType = .decimalPad
+            textField.keyboardType = .default
             self.quadField = textField
         })
         
         alert.addTextField(configurationHandler: {(textField: UITextField!) in
             textField.placeholder = "Enter irradiat values (e.g., False)"
-            textField.keyboardType = .decimalPad
+            textField.keyboardType = .default
             self.irradiat = textField
         })
         self.present(alert, animated: true, completion: nil)
