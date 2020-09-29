@@ -53,6 +53,8 @@ class Stories: UIViewController {
     var selectedContent = ""
     var selectedImage: UIImage?
     
+    var symptomremark = ""
+    
     let firstAccount = 1065
     let bitcoinChain = Blockchain()
     let reward = 100
@@ -99,6 +101,7 @@ class Stories: UIViewController {
         
         if(type=="Survivor"){
             getCytology()
+            getRemarks()
             educateView.isHidden = true
             shareView.isHidden = false
         }
@@ -117,10 +120,12 @@ class Stories: UIViewController {
         
         if(type=="Patient"){
             getCytology()
+            getRemarks()
         }
         
         if(type=="General Public"){
             getCytology()
+            getRemarks()
         }
         
         
@@ -159,6 +164,32 @@ class Stories: UIViewController {
             } else if(self.selectedresults == "Malignant"){
                 let alert = CDAlertView(title: "Cytology Report Examined: Malignant", message: "According to our ML evaluation, it seems like there might be traces of a cancerous breast cancer tumor. We have a high precision, recall and accuracy for detecting this, so instead of being anxious, you should be relaxed and confident on possibly detecting it early. Please consult an expert at the earliest for the next course of action. The linked remarks from the expert are: \(self.selectedRemarks)", type: .notification)
                 let doneAction = CDAlertViewAction(title: "Okay!")
+                alert.add(action: doneAction)
+                alert.show()
+                AudioServicesPlayAlertSound(SystemSoundID(kSystemSoundID_Vibrate))
+            }
+          }) { (error) in
+            SVProgressHUD.dismiss()
+        }
+    }
+    
+    func getRemarks(){
+        //symptomremarks
+        ref.child("symptomremarks").observeSingleEvent(of: .value, with: { (snapshot) in
+          let value = snapshot.value as? NSDictionary
+            if ((value) != nil) {
+                let json = JSON(value!)
+                print("JSON: \(json)")
+                    for (key, subjson):(String, JSON) in json {
+                        if(key == UserDefaults.standard.string(forKey: "uid")){
+                            self.symptomremark = subjson["Remark"].stringValue
+                        }
+                    }
+                
+            }
+            if(self.symptomremark != ""){
+                let alert = CDAlertView(title: "Symptom Logs Examined", message: "\(self.symptomremark)", type: .success)
+                let doneAction = CDAlertViewAction(title: "Thanks! 💪")
                 alert.add(action: doneAction)
                 alert.show()
                 AudioServicesPlayAlertSound(SystemSoundID(kSystemSoundID_Vibrate))
