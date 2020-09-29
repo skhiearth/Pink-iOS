@@ -227,7 +227,7 @@ and professionals. </string>
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="398"/>
                                     </imageView>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="EXA-gI-DFL" customClass="SkyFloatingLabelTextField" customModule="SkyFloatingLabelTextField">
-                                        <rect key="frame" x="40" y="93" width="334" height="44.5"/>
+                                        <rect key="frame" x="40" y="93" width="334" height="34"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="16"/>
                                         <textInputTraits key="textInputTraits" keyboardType="emailAddress" textContentType="email"/>
@@ -311,7 +311,7 @@ and professionals. </string>
                                         </subviews>
                                     </stackView>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="FbX-KE-ONw" customClass="SkyFloatingLabelTextField" customModule="SkyFloatingLabelTextField">
-                                        <rect key="frame" x="40" y="157.5" width="334" height="44"/>
+                                        <rect key="frame" x="40" y="147" width="334" height="34"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="16"/>
                                         <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
@@ -506,7 +506,7 @@ and professionals. </string>
                                         </constraints>
                                     </view>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4Bx-ix-979" customClass="SkyFloatingLabelTextField" customModule="SkyFloatingLabelTextField">
-                                        <rect key="frame" x="40" y="93" width="234" height="44.5"/>
+                                        <rect key="frame" x="40" y="93" width="234" height="34"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="234" id="1OY-IL-FIg"/>
                                         </constraints>
@@ -531,7 +531,7 @@ and professionals. </string>
                                         </userDefinedRuntimeAttributes>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="MAn-DQ-Oge" customClass="SkyFloatingLabelTextField" customModule="SkyFloatingLabelTextField">
-                                        <rect key="frame" x="40" y="157.5" width="234" height="44"/>
+                                        <rect key="frame" x="40" y="147" width="234" height="34"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="234" id="l9n-Nt-aSe"/>
                                         </constraints>
@@ -556,7 +556,7 @@ and professionals. </string>
                                         </userDefinedRuntimeAttributes>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="02q-YK-fwd" customClass="SkyFloatingLabelTextField" customModule="SkyFloatingLabelTextField">
-                                        <rect key="frame" x="40" y="221.5" width="234" height="44.5"/>
+                                        <rect key="frame" x="40" y="201" width="234" height="34"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="234" id="M1h-R0-tQR"/>
                                         </constraints>
@@ -1003,22 +1003,22 @@ and professionals. </string>
     </scenes>
     <designables>
         <designable name="02q-YK-fwd">
-            <size key="intrinsicContentSize" width="234" height="44.369671875000002"/>
+            <size key="intrinsicContentSize" width="98.5" height="34"/>
         </designable>
         <designable name="4Bx-ix-979">
-            <size key="intrinsicContentSize" width="234" height="44.369671875000002"/>
+            <size key="intrinsicContentSize" width="139" height="34"/>
         </designable>
         <designable name="EXA-gI-DFL">
-            <size key="intrinsicContentSize" width="334" height="44.369671875000002"/>
+            <size key="intrinsicContentSize" width="131.5" height="34"/>
         </designable>
         <designable name="FbX-KE-ONw">
-            <size key="intrinsicContentSize" width="334" height="44.369671875000002"/>
+            <size key="intrinsicContentSize" width="98.5" height="34"/>
         </designable>
         <designable name="IMj-5I-8zT">
-            <size key="intrinsicContentSize" width="143" height="44.369671875000002"/>
+            <size key="intrinsicContentSize" width="158" height="34"/>
         </designable>
         <designable name="MAn-DQ-Oge">
-            <size key="intrinsicContentSize" width="234" height="44.369671875000002"/>
+            <size key="intrinsicContentSize" width="131.5" height="34"/>
         </designable>
     </designables>
     <inferredMetricsTieBreakers>

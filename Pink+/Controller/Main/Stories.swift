@@ -188,7 +188,7 @@ class Stories: UIViewController {
                 
             }
             if(self.symptomremark != ""){
-                let alert = CDAlertView(title: "Symptom Logs Examined", message: "\(self.symptomremark)", type: .success)
+                let alert = CDAlertView(title: "Symptom Logs Examined", message: "\(self.symptomremark)", type: .notification)
                 let doneAction = CDAlertViewAction(title: "Thanks! 💪")
                 alert.add(action: doneAction)
                 alert.show()
