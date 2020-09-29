@@ -53,6 +53,12 @@ class Stories: UIViewController {
     var selectedContent = ""
     var selectedImage: UIImage?
     
+    let firstAccount = 1065
+    let bitcoinChain = Blockchain()
+    let reward = 100
+    var accounts: [String: Int] = ["0000": 10000000]
+    let invalidAlert = UIAlertController(title: "Invalid Transaction", message: "Please check the details of your transaction as we were unable to process this.", preferredStyle: .alert)
+    
     
 //    override func viewDidAppear(_ animated: Bool) {
 //        super.viewDidAppear(true)

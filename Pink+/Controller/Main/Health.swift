@@ -43,6 +43,11 @@ class Health: UIViewController, UIImagePickerControllerDelegate, UINavigationCon
     
     var ref: DatabaseReference!
     
+    let firstAccount = 1065
+    let bitcoinChain = Blockchain()
+    let reward = 100
+    var accounts: [String: Int] = ["0000": 10000000]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -255,12 +260,46 @@ class Health: UIViewController, UIImagePickerControllerDelegate, UINavigationCon
                                                                                                                                                   "Eccentric Discharge": self.discharge])
         
         AudioServicesPlayAlertSound(SystemSoundID(kSystemSoundID_Vibrate))
+        
+        let datatoblock = "Lump: \(self.lump), Thickness or Swelling: \(self.thickness), Skin Irritation: \(self.irritation), Redness or Flaky Skin: \(self.skin), Pain or General Discomfort: \(self.pain), Eccentric Discharge: \(self.discharge)"
+        
         let alert = CDAlertView(title: "Logged!", message: "Your symptoms were logged on \(formatter.string(from: currentDateTime)). You can share your symptom history with your healthcare provider if you want.", type: .success)
         let doneAction = CDAlertViewAction(title: "Noted! 😁")
         alert.add(action: doneAction)
         alert.show()
     }
     
+    func addData(type: String, data: String) {
+        let name = UserDefaults.standard.string(forKey: "name")
+        let uid = UserDefaults.standard.string(forKey: "uid")
+        
+        if type == "genesis" {
+            bitcoinChain.createGenesisBlock(data: "\(name ?? "") \(uid ?? "") genesis")
+        } else if type == "normal" {
+            print("normal called")
+            bitcoinChain.createBlock(data: "\(name ?? "") \(uid ?? "") \(data)")
+            self.chainState()
+        }
+    }
+    
+    func chainState() {
+        for i in 0...bitcoinChain.chain.count-1 {
+            print("\tBlock: \(bitcoinChain.chain[i].index!)\n\tHash: \(bitcoinChain.chain[i].hash!)\n\tPreviousHash: \(bitcoinChain.chain[i].previousHash!)\n\tData: \(bitcoinChain.chain[i].data!)")
+        }
+        
+        print(accounts)
+        print(chainValidity())
+    }
+    
+    func chainValidity() -> String {
+        var isChainValid = true
+        for i in 1...bitcoinChain.chain.count-1 {
+            if bitcoinChain.chain[i].previousHash != bitcoinChain.chain[i-1].hash {
+                isChainValid = false
+            }
+        }
+        return "Chain is valid: \(isChainValid)\n"
+    }
     
     @IBAction func shareBtnPressed(_ sender: Any) {
         getData()
@@ -283,11 +322,13 @@ class Health: UIViewController, UIImagePickerControllerDelegate, UINavigationCon
                     let _eccentric = subjson["Eccentric Discharge"].stringValue
                     let _redness = subjson["Redness or Flaky Skin"].stringValue
                     stringToAdd = stringToAdd + "On \(key): \n Lump -> \(_lump) \n Thickness or Swelling -> \(_thickness) \n Skin Irritation -> \(_irritatioon) \n Redness or Flaky Skin -> \(_redness) \n Pain/General Discomfort -> \(_pain) \n Eccentric Drainage -> \(_eccentric) \n \n"
+                    self.addData(type: "genesis", data: "genesis")
                 }
-                
                 let ac = UIActivityViewController(activityItems: [stringToAdd], applicationActivities: nil)
                 self.present(ac, animated: true)
+                self.addData(type: "normal", data: stringToAdd)
             } else {
+                self.addData(type: "genesis", data: "genesis")
                 let alert = CDAlertView(title: "Oops, something's not right!", message: "No health data to share. Please log your symptoms.", type: .error)
                 let doneAction = CDAlertViewAction(title: "Sure! 💪")
                 alert.add(action: doneAction)

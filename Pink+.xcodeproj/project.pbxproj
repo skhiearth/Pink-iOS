@@ -25,6 +25,8 @@
 		D01D88CD25152F340054586A /* Pink_UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D01D88CC25152F340054586A /* Pink_UITests.swift */; };
 		D02A389D25221E6200EBB013 /* CytologyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D02A389C25221E6200EBB013 /* CytologyCell.swift */; };
 		D02D16AC2515FEBA00F8CDA8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D02D16AA2515FEBA00F8CDA8 /* Main.storyboard */; };
+		D04FE1492522ECBD0029A1A9 /* Block.swift in Sources */ = {isa = PBXBuildFile; fileRef = D04FE1482522ECBC0029A1A9 /* Block.swift */; };
+		D04FE1872522ED590029A1A9 /* Blockchain.swift in Sources */ = {isa = PBXBuildFile; fileRef = D04FE1862522ED590029A1A9 /* Blockchain.swift */; };
 		D0620A35251F7ADE00C2A761 /* Collaborate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0620A34251F7ADE00C2A761 /* Collaborate.swift */; };
 		D0620A3A251F880700C2A761 /* CollabCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0620A39251F880700C2A761 /* CollabCellTableViewCell.swift */; };
 		D0620A47251F9AB600C2A761 /* CollaborateDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0620A46251F9AB600C2A761 /* CollaborateDetail.swift */; };
@@ -154,6 +156,8 @@
 		D01D88CE25152F340054586A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D02A389C25221E6200EBB013 /* CytologyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CytologyCell.swift; sourceTree = "<group>"; };
 		D02D16AB2515FEBA00F8CDA8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		D04FE1482522ECBC0029A1A9 /* Block.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Block.swift; sourceTree = "<group>"; };
+		D04FE1862522ED590029A1A9 /* Blockchain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Blockchain.swift; sourceTree = "<group>"; };
 		D0620A34251F7ADE00C2A761 /* Collaborate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Collaborate.swift; sourceTree = "<group>"; };
 		D0620A39251F880700C2A761 /* CollabCellTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollabCellTableViewCell.swift; sourceTree = "<group>"; };
 		D0620A46251F9AB600C2A761 /* CollaborateDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollaborateDetail.swift; sourceTree = "<group>"; };
@@ -199,6 +203,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		50AE6A0E6E740DFC15F2CD6D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		D01D88A425152F320054586A /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -286,6 +297,7 @@
 		D01D88A925152F320054586A /* Pink+ */ = {
 			isa = PBXGroup;
 			children = (
+				D04FE1472522ECAF0029A1A9 /* Blockchain */,
 				D01D88DD25152F8D0054586A /* Model */,
 				D01D88DE25152F940054586A /* View */,
 				D01D88DF25152F980054586A /* Controller */,
@@ -379,6 +391,15 @@
 			path = RegisterLogin;
 			sourceTree = "<group>";
 		};
+		D04FE1472522ECAF0029A1A9 /* Blockchain */ = {
+			isa = PBXGroup;
+			children = (
+				D04FE1482522ECBC0029A1A9 /* Block.swift */,
+				D04FE1862522ED590029A1A9 /* Blockchain.swift */,
+			);
+			path = Blockchain;
+			sourceTree = "<group>";
+		};
 		D089B56525206EB700A14417 /* Pink+ Tracker */ = {
 			isa = PBXGroup;
 			children = (
@@ -443,6 +464,8 @@
 				D089B57F25206EBB00A14417 /* PBXTargetDependency */,
 			);
 			name = "Pink+";
+			packageProductDependencies = (
+			);
 			productName = "Pink+";
 			productReference = D01D88A725152F320054586A /* Pink+.app */;
 			productType = "com.apple.product-type.application";
@@ -492,6 +515,7 @@
 			buildPhases = (
 				D089B56225206EB700A14417 /* Resources */,
 				D089B58425206EBB00A14417 /* Embed App Extensions */,
+				50AE6A0E6E740DFC15F2CD6D /* Frameworks */,
 			);
 			buildRules = (
 			);
@@ -558,6 +582,8 @@
 				Base,
 			);
 			mainGroup = D01D889E25152F320054586A;
+			packageReferences = (
+			);
 			productRefGroup = D01D88A825152F320054586A /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -742,6 +768,7 @@
 				D01C0BB22515F1AC0089F2CD /* GetStarted.swift in Sources */,
 				D01C0BBC2515F4D80089F2CD /* RegisterTwo.swift in Sources */,
 				D0A95C492518860A008FB0F9 /* Story.swift in Sources */,
+				D04FE1492522ECBD0029A1A9 /* Block.swift in Sources */,
 				D066290B251E7373009F8BE4 /* Chat.swift in Sources */,
 				D02A389D25221E6200EBB013 /* CytologyCell.swift in Sources */,
 				D0DCCBA8251B304800DF6007 /* CampaignData.swift in Sources */,
@@ -759,6 +786,7 @@
 				D01C0BB72515F1DD0089F2CD /* RegisterOne.swift in Sources */,
 				D0EAA6BB2516880F00E22201 /* Login.swift in Sources */,
 				D066294C251E7D90009F8BE4 /* SupportGroupChat.swift in Sources */,
+				D04FE1872522ED590029A1A9 /* Blockchain.swift in Sources */,
 				D0620A47251F9AB600C2A761 /* CollaborateDetail.swift in Sources */,
 				D0A95C552518A3FD008FB0F9 /* ImagePickerManager.swift in Sources */,
 				D0F3ED1D251C8F5800C32538 /* NewsCell.swift in Sources */,
