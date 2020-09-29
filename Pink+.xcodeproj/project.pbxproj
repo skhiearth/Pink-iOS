@@ -60,6 +60,8 @@
 		D0BD54C12517C79000B1C5E9 /* TextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0BD54C02517C79000B1C5E9 /* TextView.swift */; };
 		D0BD54C62517DEAF00B1C5E9 /* StoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0BD54C52517DEAF00B1C5E9 /* StoryCell.swift */; };
 		D0DCCBA8251B304800DF6007 /* CampaignData.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0DCCBA7251B304800DF6007 /* CampaignData.swift */; };
+		D0E7D87B2522FEAC003EA891 /* SymptomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0E7D87A2522FEAC003EA891 /* SymptomCell.swift */; };
+		D0E7D8822522FEF5003EA891 /* SymptomTrackingVCViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0E7D8812522FEF5003EA891 /* SymptomTrackingVCViewController.swift */; };
 		D0EAA6BB2516880F00E22201 /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0EAA6BA2516880F00E22201 /* Login.swift */; };
 		D0EAA6CE2516900B00E22201 /* Pink.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D0EAA6CD2516900B00E22201 /* Pink.storyboard */; };
 		D0EAA6D42516905300E22201 /* Stories.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0EAA6D32516905300E22201 /* Stories.swift */; };
@@ -193,6 +195,8 @@
 		D0BD54C02517C79000B1C5E9 /* TextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextView.swift; sourceTree = "<group>"; };
 		D0BD54C52517DEAF00B1C5E9 /* StoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryCell.swift; sourceTree = "<group>"; };
 		D0DCCBA7251B304800DF6007 /* CampaignData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CampaignData.swift; sourceTree = "<group>"; };
+		D0E7D87A2522FEAC003EA891 /* SymptomCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SymptomCell.swift; sourceTree = "<group>"; };
+		D0E7D8812522FEF5003EA891 /* SymptomTrackingVCViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SymptomTrackingVCViewController.swift; sourceTree = "<group>"; };
 		D0EAA6BA2516880F00E22201 /* Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
 		D0EAA6CD2516900B00E22201 /* Pink.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Pink.storyboard; sourceTree = "<group>"; };
 		D0EAA6D32516905300E22201 /* Stories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stories.swift; sourceTree = "<group>"; };
@@ -353,6 +357,7 @@
 				D0F3ED1C251C8F5800C32538 /* NewsCell.swift */,
 				D0620A39251F880700C2A761 /* CollabCellTableViewCell.swift */,
 				D02A389C25221E6200EBB013 /* CytologyCell.swift */,
+				D0E7D87A2522FEAC003EA891 /* SymptomCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -440,6 +445,7 @@
 				D0620A46251F9AB600C2A761 /* CollaborateDetail.swift */,
 				D0620A4B251FA0A500C2A761 /* CollabChat.swift */,
 				D07C5B612520D49A00E48577 /* Doctor.swift */,
+				D0E7D8812522FEF5003EA891 /* SymptomTrackingVCViewController.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -756,6 +762,7 @@
 				D074B602251697F0007F6D80 /* Launch.swift in Sources */,
 				D0A06A3F251E1D9200C999A2 /* EducateDetail.swift in Sources */,
 				D0620A4C251FA0A500C2A761 /* CollabChat.swift in Sources */,
+				D0E7D87B2522FEAC003EA891 /* SymptomCell.swift in Sources */,
 				D0620A3A251F880700C2A761 /* CollabCellTableViewCell.swift in Sources */,
 				D0662871251E6CB1009F8BE4 /* Message.swift in Sources */,
 				D003FFB1251D00290075F50E /* GailViewController.swift in Sources */,
@@ -765,6 +772,7 @@
 				D0662947251E7A8B009F8BE4 /* Constants.swift in Sources */,
 				D07C5B622520D49B00E48577 /* Doctor.swift in Sources */,
 				D0BD54C62517DEAF00B1C5E9 /* StoryCell.swift in Sources */,
+				D0E7D8822522FEF5003EA891 /* SymptomTrackingVCViewController.swift in Sources */,
 				D01C0BB22515F1AC0089F2CD /* GetStarted.swift in Sources */,
 				D01C0BBC2515F4D80089F2CD /* RegisterTwo.swift in Sources */,
 				D0A95C492518860A008FB0F9 /* Story.swift in Sources */,
