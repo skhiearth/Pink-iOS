@@ -99,8 +99,10 @@ class Share: UIViewController, UIImagePickerControllerDelegate, UINavigationCont
                 let username = UserDefaults.standard.string(forKey: "name")
                 
                 let servername = username! + ".png"
+                SVProgressHUD.dismiss()
                 
                 if let data = image.pngData() { // convert your UIImage into Data object using png representation
+                    SVProgressHUD.show(withStatus: "Uploading...")
                     FirebaseStorageManager().uploadImageData(data: data, serverFileName: servername) { (isSuccess, url) in
                             self.ref.child("stories").child(UserDefaults.standard.string(forKey: "name")!).child(self.storyTitle).setValue(["Title": self.storyTitle,
                                                                                          "Content": self.content,
