@@ -20,6 +20,7 @@ class Collaborate: UIViewController, UITableViewDelegate, UITableViewDataSource 
     @IBOutlet weak var addContentBtn: UIButton!
     @IBOutlet weak var segControl: UISegmentedControl!
     @IBOutlet weak var shareBtn: UIButton!
+    @IBOutlet weak var scrollview: UIScrollView!
     
     var isBottomViewOpen = false
     
@@ -168,6 +169,8 @@ class Collaborate: UIViewController, UITableViewDelegate, UITableViewDataSource 
         self.segControl.isHidden = false
         self.isBottomViewOpen = true
         self.heightconst.constant = 350
+        self.scrollview.isHidden = false
+        self.shareBtn.isHidden = false
         self.bottomView.layoutIfNeeded()
     }
     
@@ -176,6 +179,8 @@ class Collaborate: UIViewController, UITableViewDelegate, UITableViewDataSource 
         self.segControl.isHidden = true
         self.isBottomViewOpen = false
         self.heightconst.constant = 40
+        self.scrollview.isHidden = true
+        self.shareBtn.isHidden = true
         self.bottomView.layoutIfNeeded()
     }
     

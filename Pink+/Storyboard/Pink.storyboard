@@ -2934,6 +2934,7 @@
                         <outlet property="addContentBtn" destination="GEK-RD-db6" id="TdW-GU-GbB"/>
                         <outlet property="bottomView" destination="8cN-Xq-JBo" id="fkW-WZ-VOO"/>
                         <outlet property="heightconst" destination="xbH-8c-gbs" id="deP-m2-Guj"/>
+                        <outlet property="scrollview" destination="PeY-Ji-KMr" id="Ibr-gT-4bX"/>
                         <outlet property="segControl" destination="KFk-Bb-3pT" id="AAw-kZ-7gy"/>
                         <outlet property="shareBtn" destination="Mya-cN-nHP" id="3lQ-jT-vag"/>
                         <outlet property="tableView" destination="mSa-Bu-WV1" id="lz5-MI-umg"/>
