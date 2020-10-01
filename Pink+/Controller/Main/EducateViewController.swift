@@ -65,7 +65,7 @@ class EducateViewController: UIViewController {
         case 1:
             self.getEducate(category: "Detection")
         case 2:
-            self.getEducate(category: "Detection")
+            self.getEducate(category: "Diagnosis")
         case 3:
             self.getEducate(category: "Prognosis")
         case 4:
