@@ -17,7 +17,7 @@ def button():
         comment = [float(i) for i in comment]
         print(comment)
 
-        df = pd.read_csv('dataset/bcd.csv')
+        df = pd.read_csv('Model/dataset/bcd.csv')
 
         X = df.iloc[:, :-1]
         X.loc[len(X)] = comment
@@ -27,11 +27,11 @@ def button():
         sc = StandardScaler()
         X = sc.fit_transform(X)
 
-        model = joblib.load('model.pkl')
+        model = joblib.load('Model/notebook/model.pkl')
         pred = model.predict(X)[-1]
         print(X[-1])
 
-        if pred == 1:
+        if pred == 0:
             predicted = "Benign"
         else:
             predicted = "Malignant"
