@@ -1,5 +1,32 @@
 # Pink-iOS
 
+## Requirements
+
+#### Hardware
+
+* MacBook, Mac Mini, iMac, Mac Pro or any other variant running macOS 10.15.4 (Catalina) or later.
+* Atleast 4GB of RAM recommended (For running on Simulator)
+* An iPhone or iPad running iOS/iPadOS 14.0 or later. (For running on physical device)
+* An Apple Watch running watchOS 7.0 or later. (For running on physical device)
+
+#### Software
+
+* Xcode version 12.0
+* Xcode Command Line Tools
+* CocoaPods
+
+#### Instructions
+
+Clone the GitHub repo on your local machine. Navigate to the project folder in the terminal and run `pod install` to install dependencies. Open the workspace in Xcode, configure the profiles and hit run for the simulator to load up. For testing the Watch Tracker, change the target to the Pink+ Tracker and hit run.
+
+## About Pink+
+
+### VIDEO WALKTHROUGHS:
+
+For a detailed video explanation with voice-over, click [here](https://www.youtube.com/watch?v=L1d9DSalAQ0).
+
+For App Walkthrough, working demo and overview of features, click [here](https://www.youtube.com/watch?v=G9onOfe3vEs&t=22s).
+
 ### INSPIRATION: 
 Health being a critical component of our lives, especially in the current scenario, we have been inspired by numerous scientific and technological efforts across the globe to address the concerns revolving around Breast cancer thereby, igniting us into developing our app Pink+ 
 
