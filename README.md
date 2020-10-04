@@ -1,4 +1,4 @@
-# Pink-iOS
+# Pink+
 
 ## Requirements
 
