@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "D01D88A625152F320054586A"
-               BuildableName = "Pink+.app"
-               BlueprintName = "Pink+"
-               ReferencedContainer = "container:Pink+.xcodeproj">
+               BuildableName = "PinkPlus.app"
+               BlueprintName = "PinkPlus"
+               ReferencedContainer = "container:PinkPlus.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -28,26 +28,6 @@
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "D01D88BC25152F340054586A"
-               BuildableName = "Pink+Tests.xctest"
-               BlueprintName = "Pink+Tests"
-               ReferencedContainer = "container:Pink+.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "D01D88C725152F340054586A"
-               BuildableName = "Pink+UITests.xctest"
-               BlueprintName = "Pink+UITests"
-               ReferencedContainer = "container:Pink+.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
       </Testables>
    </TestAction>
    <LaunchAction
@@ -65,18 +45,11 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "D01D88A625152F320054586A"
-            BuildableName = "Pink+.app"
-            BlueprintName = "Pink+"
-            ReferencedContainer = "container:Pink+.xcodeproj">
+            BuildableName = "PinkPlus.app"
+            BlueprintName = "PinkPlus"
+            ReferencedContainer = "container:PinkPlus.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
-      <EnvironmentVariables>
-         <EnvironmentVariable
-            key = "OS_ACTIVITY_MODE"
-            value = "${DEBUG_ACTIVITY_MODE}"
-            isEnabled = "YES">
-         </EnvironmentVariable>
-      </EnvironmentVariables>
    </LaunchAction>
    <ProfileAction
       buildConfiguration = "Release"
@@ -89,9 +62,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "D01D88A625152F320054586A"
-            BuildableName = "Pink+.app"
-            BlueprintName = "Pink+"
-            ReferencedContainer = "container:Pink+.xcodeproj">
+            BuildableName = "PinkPlus.app"
+            BlueprintName = "PinkPlus"
+            ReferencedContainer = "container:PinkPlus.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

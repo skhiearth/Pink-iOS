@@ -41,11 +41,11 @@
 		D07D6F46251F11030026894E /* SupportGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = D07D6F45251F11030026894E /* SupportGroup.swift */; };
 		D089B56825206EB700A14417 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D089B56625206EB700A14417 /* Interface.storyboard */; };
 		D089B56A25206EB900A14417 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D089B56925206EB900A14417 /* Assets.xcassets */; };
-		D089B57125206EBA00A14417 /* Pink+ Tracker Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = D089B57025206EBA00A14417 /* Pink+ Tracker Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		D089B57125206EBA00A14417 /* PinkPlus Tracker Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = D089B57025206EBA00A14417 /* PinkPlus Tracker Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		D089B57825206EBA00A14417 /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D089B57725206EBA00A14417 /* ExtensionDelegate.swift */; };
 		D089B57A25206EBA00A14417 /* ComplicationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D089B57925206EBA00A14417 /* ComplicationController.swift */; };
 		D089B57C25206EBB00A14417 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D089B57B25206EBB00A14417 /* Assets.xcassets */; };
-		D089B58025206EBB00A14417 /* Pink+ Tracker.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = D089B56425206EB700A14417 /* Pink+ Tracker.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		D089B58025206EBB00A14417 /* PinkPlus Tracker.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = D089B56425206EB700A14417 /* PinkPlus Tracker.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		D089B594252071DE00A14417 /* SymptomTracking.swift in Sources */ = {isa = PBXBuildFile; fileRef = D089B593252071DE00A14417 /* SymptomTracking.swift */; };
 		D089B59B252074AE00A14417 /* UserDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = D089B59A252074AE00A14417 /* UserDetails.swift */; };
 		D089B59C252074AE00A14417 /* UserDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = D089B59A252074AE00A14417 /* UserDetails.swift */; };
@@ -109,7 +109,7 @@
 			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
 			dstSubfolderSpec = 16;
 			files = (
-				D089B58025206EBB00A14417 /* Pink+ Tracker.app in Embed Watch Content */,
+				D089B58025206EBB00A14417 /* PinkPlus Tracker.app in Embed Watch Content */,
 			);
 			name = "Embed Watch Content";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -120,7 +120,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
-				D089B57125206EBA00A14417 /* Pink+ Tracker Extension.appex in Embed App Extensions */,
+				D089B57125206EBA00A14417 /* PinkPlus Tracker Extension.appex in Embed App Extensions */,
 			);
 			name = "Embed App Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -144,7 +144,7 @@
 		D01C0BB62515F1DD0089F2CD /* RegisterOne.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterOne.swift; sourceTree = "<group>"; };
 		D01C0BBB2515F4D80089F2CD /* RegisterTwo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterTwo.swift; sourceTree = "<group>"; };
 		D01C0BBD2515F4E60089F2CD /* RegisterThree.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterThree.swift; sourceTree = "<group>"; };
-		D01D88A725152F320054586A /* Pink+.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Pink+.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D01D88A725152F320054586A /* PinkPlus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PinkPlus.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D01D88AA25152F320054586A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D01D88AC25152F320054586A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		D01D88B325152F340054586A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -173,11 +173,11 @@
 		D074B6092516A43D007F6D80 /* Health.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Health.swift; sourceTree = "<group>"; };
 		D07C5B612520D49A00E48577 /* Doctor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Doctor.swift; sourceTree = "<group>"; };
 		D07D6F45251F11030026894E /* SupportGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupportGroup.swift; sourceTree = "<group>"; };
-		D089B56425206EB700A14417 /* Pink+ Tracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Pink+ Tracker.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D089B56425206EB700A14417 /* PinkPlus Tracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "PinkPlus Tracker.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D089B56725206EB700A14417 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
 		D089B56925206EB900A14417 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D089B56B25206EB900A14417 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		D089B57025206EBA00A14417 /* Pink+ Tracker Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Pink+ Tracker Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D089B57025206EBA00A14417 /* PinkPlus Tracker Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "PinkPlus Tracker Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D089B57725206EBA00A14417 /* ExtensionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDelegate.swift; sourceTree = "<group>"; };
 		D089B57925206EBA00A14417 /* ComplicationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplicationController.swift; sourceTree = "<group>"; };
 		D089B57B25206EBB00A14417 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -289,11 +289,11 @@
 		D01D88A825152F320054586A /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				D01D88A725152F320054586A /* Pink+.app */,
+				D01D88A725152F320054586A /* PinkPlus.app */,
 				D01D88BD25152F340054586A /* Pink+Tests.xctest */,
 				D01D88C825152F340054586A /* Pink+UITests.xctest */,
-				D089B56425206EB700A14417 /* Pink+ Tracker.app */,
-				D089B57025206EBA00A14417 /* Pink+ Tracker Extension.appex */,
+				D089B56425206EB700A14417 /* PinkPlus Tracker.app */,
+				D089B57025206EBA00A14417 /* PinkPlus Tracker Extension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -453,9 +453,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		D01D88A625152F320054586A /* Pink+ */ = {
+		D01D88A625152F320054586A /* PinkPlus */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = D01D88D125152F340054586A /* Build configuration list for PBXNativeTarget "Pink+" */;
+			buildConfigurationList = D01D88D125152F340054586A /* Build configuration list for PBXNativeTarget "PinkPlus" */;
 			buildPhases = (
 				41E8A0B55BEFFCBFA65D5639 /* [CP] Check Pods Manifest.lock */,
 				D01D88A325152F320054586A /* Sources */,
@@ -469,11 +469,11 @@
 			dependencies = (
 				D089B57F25206EBB00A14417 /* PBXTargetDependency */,
 			);
-			name = "Pink+";
+			name = PinkPlus;
 			packageProductDependencies = (
 			);
 			productName = "Pink+";
-			productReference = D01D88A725152F320054586A /* Pink+.app */;
+			productReference = D01D88A725152F320054586A /* PinkPlus.app */;
 			productType = "com.apple.product-type.application";
 		};
 		D01D88BC25152F340054586A /* Pink+Tests */ = {
@@ -515,9 +515,9 @@
 			productReference = D01D88C825152F340054586A /* Pink+UITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
-		D089B56325206EB700A14417 /* Pink+ Tracker */ = {
+		D089B56325206EB700A14417 /* PinkPlus Tracker */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = D089B58825206EBB00A14417 /* Build configuration list for PBXNativeTarget "Pink+ Tracker" */;
+			buildConfigurationList = D089B58825206EBB00A14417 /* Build configuration list for PBXNativeTarget "PinkPlus Tracker" */;
 			buildPhases = (
 				D089B56225206EB700A14417 /* Resources */,
 				D089B58425206EBB00A14417 /* Embed App Extensions */,
@@ -528,14 +528,14 @@
 			dependencies = (
 				D089B57325206EBA00A14417 /* PBXTargetDependency */,
 			);
-			name = "Pink+ Tracker";
+			name = "PinkPlus Tracker";
 			productName = "Pink+ Tracker";
-			productReference = D089B56425206EB700A14417 /* Pink+ Tracker.app */;
+			productReference = D089B56425206EB700A14417 /* PinkPlus Tracker.app */;
 			productType = "com.apple.product-type.application.watchapp2";
 		};
-		D089B56F25206EBA00A14417 /* Pink+ Tracker Extension */ = {
+		D089B56F25206EBA00A14417 /* PinkPlus Tracker Extension */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = D089B58725206EBB00A14417 /* Build configuration list for PBXNativeTarget "Pink+ Tracker Extension" */;
+			buildConfigurationList = D089B58725206EBB00A14417 /* Build configuration list for PBXNativeTarget "PinkPlus Tracker Extension" */;
 			buildPhases = (
 				D089B56C25206EBA00A14417 /* Sources */,
 				D089B56D25206EBA00A14417 /* Frameworks */,
@@ -545,9 +545,9 @@
 			);
 			dependencies = (
 			);
-			name = "Pink+ Tracker Extension";
+			name = "PinkPlus Tracker Extension";
 			productName = "Pink+ Tracker Extension";
-			productReference = D089B57025206EBA00A14417 /* Pink+ Tracker Extension.appex */;
+			productReference = D089B57025206EBA00A14417 /* PinkPlus Tracker Extension.appex */;
 			productType = "com.apple.product-type.watchkit2-extension";
 		};
 /* End PBXNativeTarget section */
@@ -594,11 +594,11 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				D01D88A625152F320054586A /* Pink+ */,
+				D01D88A625152F320054586A /* PinkPlus */,
 				D01D88BC25152F340054586A /* Pink+Tests */,
 				D01D88C725152F340054586A /* Pink+UITests */,
-				D089B56325206EB700A14417 /* Pink+ Tracker */,
-				D089B56F25206EBA00A14417 /* Pink+ Tracker Extension */,
+				D089B56325206EB700A14417 /* PinkPlus Tracker */,
+				D089B56F25206EBA00A14417 /* PinkPlus Tracker Extension */,
 			);
 		};
 /* End PBXProject section */
@@ -835,22 +835,22 @@
 /* Begin PBXTargetDependency section */
 		D01D88BF25152F340054586A /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = D01D88A625152F320054586A /* Pink+ */;
+			target = D01D88A625152F320054586A /* PinkPlus */;
 			targetProxy = D01D88BE25152F340054586A /* PBXContainerItemProxy */;
 		};
 		D01D88CA25152F340054586A /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = D01D88A625152F320054586A /* Pink+ */;
+			target = D01D88A625152F320054586A /* PinkPlus */;
 			targetProxy = D01D88C925152F340054586A /* PBXContainerItemProxy */;
 		};
 		D089B57325206EBA00A14417 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = D089B56F25206EBA00A14417 /* Pink+ Tracker Extension */;
+			target = D089B56F25206EBA00A14417 /* PinkPlus Tracker Extension */;
 			targetProxy = D089B57225206EBA00A14417 /* PBXContainerItemProxy */;
 		};
 		D089B57F25206EBB00A14417 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = D089B56325206EB700A14417 /* Pink+ Tracker */;
+			target = D089B56325206EB700A14417 /* PinkPlus Tracker */;
 			targetProxy = D089B57E25206EBB00A14417 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -1241,7 +1241,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		D01D88D125152F340054586A /* Build configuration list for PBXNativeTarget "Pink+" */ = {
+		D01D88D125152F340054586A /* Build configuration list for PBXNativeTarget "PinkPlus" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				D01D88D225152F340054586A /* Debug */,
@@ -1268,7 +1268,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		D089B58725206EBB00A14417 /* Build configuration list for PBXNativeTarget "Pink+ Tracker Extension" */ = {
+		D089B58725206EBB00A14417 /* Build configuration list for PBXNativeTarget "PinkPlus Tracker Extension" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				D089B58525206EBB00A14417 /* Debug */,
@@ -1277,7 +1277,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		D089B58825206EBB00A14417 /* Build configuration list for PBXNativeTarget "Pink+ Tracker" */ = {
+		D089B58825206EBB00A14417 /* Build configuration list for PBXNativeTarget "PinkPlus Tracker" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				D089B58225206EBB00A14417 /* Debug */,
