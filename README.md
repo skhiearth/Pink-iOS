@@ -21,6 +21,8 @@ Clone the GitHub repo on your local machine. Navigate to the project folder in t
 
 ## About Pink+
 
+![App Screenshots](https://raw.githubusercontent.com/skhiearth/Pink-iOS/master/Screenshots/App%20Screenshots.png?token=AIZPUXILU7AU4PJERQU4HW27QPX34)
+
 ### VIDEO WALKTHROUGHS:
 
 For a detailed video explanation with voice-over, click [here](https://www.youtube.com/watch?v=L1d9DSalAQ0).
