@@ -1,24 +1,5 @@
 # Pink+
 
-## Requirements
-
-#### Hardware
-
-* MacBook, Mac Mini, iMac, Mac Pro or any other variant running macOS 10.15.4 (Catalina) or later.
-* Atleast 4GB of RAM recommended (For running on Simulator)
-* An iPhone or iPad running iOS/iPadOS 14.0 or later. (For running on physical device)
-* An Apple Watch running watchOS 7.0 or later. (For running on physical device)
-
-#### Software
-
-* Xcode version 12.0
-* Xcode Command Line Tools
-* CocoaPods
-
-#### Instructions
-
-Clone the GitHub repo on your local machine. Navigate to the project folder in the terminal and run `pod install` to install dependencies. Open the workspace in Xcode, configure the profiles and hit run for the simulator to load up. For testing the Watch Tracker, change the target to the Pink+ Tracker and hit run.
-
 ## About Pink+
 
 ![App Screenshots](https://raw.githubusercontent.com/skhiearth/Pink-iOS/master/Screenshots/App%20Screenshots.png?token=AIZPUXILU7AU4PJERQU4HW27QPX34)
@@ -78,3 +59,21 @@ Health being a critical component of our lives, especially in the current scenar
  
 4.	Additional campaigns: Exploring sports and gaming industry.
 
+## Requirements
+
+#### Hardware
+
+* MacBook, Mac Mini, iMac, Mac Pro or any other variant running macOS 10.15.4 (Catalina) or later.
+* Atleast 4GB of RAM recommended (For running on Simulator)
+* An iPhone or iPad running iOS/iPadOS 14.0 or later. (For running on physical device)
+* An Apple Watch running watchOS 7.0 or later. (For running on physical device)
+
+#### Software
+
+* Xcode version 12.0
+* Xcode Command Line Tools
+* CocoaPods
+
+#### Instructions
+
+Clone the GitHub repo on your local machine. Navigate to the project folder in the terminal and run `pod install` to install dependencies. Open the workspace in Xcode, configure the profiles and hit run for the simulator to load up. For testing the Watch Tracker, change the target to the Pink+ Tracker and hit run.
