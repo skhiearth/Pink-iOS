@@ -18,7 +18,7 @@ Health being a critical component of our lives, especially in the current scenar
 ### APP STRUCTURE: (Pink+ functionalities)
 1. Wellness: Provides symptom logging, risk assessment, and ML-based diagnosis using Cytology Reports and screening examinations using Blood Test
  Reports. 
-2. Support groups: They're divided based on of location and user segment. We believe this can help link together people of same interests together, and also help bring people who can help each other under a common umbrella. To ensure we still achieve our wider goal of catering to a global population, both kinds of divisions have a global room, accessible to all.
+2. Support groups: They're divided on the basis of location and user segment. We believe this can help link together people of same interests together, and also help bring people who can help each other under a common umbrella. To ensure we still achieve our wider goal of catering to a global population, both kinds of divisions have a global room, accessible to all.
 3. Survivor stories: Platform for survivors to share their poignant stories and guide patients in support groups that'll help others on a similar journey.
 4. Breast cancer education: We can reduce the stigma of Breast cancer through enhanced cancer education. The intended purpose of this section is for professionals to upload educational content about Breast Cancer
 5. Campaigns: To have comprehensive global coverage, we chose four ways that’ll have an effective outreach and will raise awareness about detection, treatment, and the need for a reliable, permanent cure.
