@@ -1,5 +1,7 @@
 # Pink+
 
+Made with ❤️ by The Misfits in India
+
 ## About Pink+
 
 ![App Screenshots](https://raw.githubusercontent.com/skhiearth/Pink-iOS/master/Screenshots/App%20Screenshots.png?token=AIZPUXILU7AU4PJERQU4HW27QPX34)
