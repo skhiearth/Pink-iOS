@@ -1015,7 +1015,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.PinkPlus.Pink-";
+				PRODUCT_BUNDLE_IDENTIFIER = com.PinkPlus.Pink;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
@@ -1036,7 +1036,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.PinkPlus.Pink-";
+				PRODUCT_BUNDLE_IDENTIFIER = com.PinkPlus.Pink;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
@@ -1148,7 +1148,7 @@
 					"@executable_path/../Frameworks",
 					"@loader_path/../Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.PinkPlus.Pink-.PinkPluswatchkitapp";
+				PRODUCT_BUNDLE_IDENTIFIER = com.PinkPlus.Pink.PinkPluswatchkitapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
@@ -1175,7 +1175,7 @@
 					"@executable_path/../Frameworks",
 					"@loader_path/../Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.PinkPlus.Pink-.PinkPluswatchkitapp";
+				PRODUCT_BUNDLE_IDENTIFIER = com.PinkPlus.Pink.PinkPluswatchkitapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
@@ -1197,7 +1197,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.PinkPlus.Pink-.PinkPluswatchkitapp.extension";
+				PRODUCT_BUNDLE_IDENTIFIER = com.PinkPlus.Pink.PinkPluswatchkitapp.extension;
 				PRODUCT_NAME = "${TARGET_NAME}";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
@@ -1219,7 +1219,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.PinkPlus.Pink-.PinkPluswatchkitapp.extension";
+				PRODUCT_BUNDLE_IDENTIFIER = com.PinkPlus.Pink.PinkPluswatchkitapp.extension;
 				PRODUCT_NAME = "${TARGET_NAME}";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
