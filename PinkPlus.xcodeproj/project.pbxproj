@@ -579,7 +579,7 @@
 					};
 				};
 			};
-			buildConfigurationList = D01D88A225152F320054586A /* Build configuration list for PBXProject "Pink+" */;
+			buildConfigurationList = D01D88A225152F320054586A /* Build configuration list for PBXProject "PinkPlus" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -1232,7 +1232,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		D01D88A225152F320054586A /* Build configuration list for PBXProject "Pink+" */ = {
+		D01D88A225152F320054586A /* Build configuration list for PBXProject "PinkPlus" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				D01D88CF25152F340054586A /* Debug */,
