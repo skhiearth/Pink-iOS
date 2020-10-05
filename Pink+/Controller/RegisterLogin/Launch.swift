@@ -2,7 +2,7 @@
 //  Launch.swift
 //  Pink+
 //
-//  Created by Utkarsh Sharma on 24/09/20.
+//  Created by Utkarsh Sharma on 28/09/20.
 //
 
 import UIKit
