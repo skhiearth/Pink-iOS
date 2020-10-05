@@ -1,6 +1,6 @@
 # Pink+
 
-Made with ❤️ by The Misfits [The Misfits](https://the-misfits.github.io/) in India.
+Made with ❤️ by [The Misfits](https://the-misfits.github.io/) in India.
 
 ## About Pink+
 
