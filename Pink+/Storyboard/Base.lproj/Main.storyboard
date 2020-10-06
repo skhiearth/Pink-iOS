@@ -16,7 +16,7 @@
         <!--GetStarted-->
         <scene sceneID="ACn-nm-YJv">
             <objects>
-                <viewController storyboardIdentifier="GetStarted" title="GetStarted" useStoryboardIdentifierAsRestorationIdentifier="YES" id="cwH-dB-jhL" customClass="GetStarted" customModule="Pink_" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="GetStarted" title="GetStarted" useStoryboardIdentifierAsRestorationIdentifier="YES" id="cwH-dB-jhL" customClass="GetStarted" customModule="PinkPlus" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="KGf-I1-L7K">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -208,7 +208,7 @@ and professionals. </string>
         <!--Login-->
         <scene sceneID="DCq-6S-nGi">
             <objects>
-                <viewController storyboardIdentifier="Login" title="Login" useStoryboardIdentifierAsRestorationIdentifier="YES" id="593-c2-5G0" customClass="Login" customModule="Pink_" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Login" title="Login" useStoryboardIdentifierAsRestorationIdentifier="YES" id="593-c2-5G0" customClass="Login" customModule="PinkPlus" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="sot-vC-B46">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -388,7 +388,7 @@ and professionals. </string>
         <!--Launch-->
         <scene sceneID="5Wr-iT-Ue1">
             <objects>
-                <viewController storyboardIdentifier="Launch" useStoryboardIdentifierAsRestorationIdentifier="YES" id="ugr-nV-XUT" customClass="Launch" customModule="Pink_" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Launch" useStoryboardIdentifierAsRestorationIdentifier="YES" id="ugr-nV-XUT" customClass="Launch" customModule="PinkPlus" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="QJp-YE-UuR">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -403,7 +403,7 @@ and professionals. </string>
         <!--RegisterOne-->
         <scene sceneID="Ozx-rw-sBa">
             <objects>
-                <viewController storyboardIdentifier="RegisterOne" title="RegisterOne" useStoryboardIdentifierAsRestorationIdentifier="YES" id="OgL-0s-QAK" customClass="RegisterOne" customModule="Pink_" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="RegisterOne" title="RegisterOne" useStoryboardIdentifierAsRestorationIdentifier="YES" id="OgL-0s-QAK" customClass="RegisterOne" customModule="PinkPlus" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="kIm-GD-UyW">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -635,7 +635,7 @@ and professionals. </string>
         <!--RegisterTwo-->
         <scene sceneID="igg-Uj-Xj8">
             <objects>
-                <viewController storyboardIdentifier="RegisterTwo" title="RegisterTwo" useStoryboardIdentifierAsRestorationIdentifier="YES" id="dm0-Tk-9Dx" customClass="RegisterTwo" customModule="Pink_" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="RegisterTwo" title="RegisterTwo" useStoryboardIdentifierAsRestorationIdentifier="YES" id="dm0-Tk-9Dx" customClass="RegisterTwo" customModule="PinkPlus" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="z0D-Sk-bXZ">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -869,7 +869,7 @@ and professionals. </string>
         <!--RegisterThree-->
         <scene sceneID="EOW-wC-oFk">
             <objects>
-                <viewController storyboardIdentifier="RegisterThree" title="RegisterThree" useStoryboardIdentifierAsRestorationIdentifier="YES" id="MqG-QB-9Et" customClass="RegisterThree" customModule="Pink_" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="RegisterThree" title="RegisterThree" useStoryboardIdentifierAsRestorationIdentifier="YES" id="MqG-QB-9Et" customClass="RegisterThree" customModule="PinkPlus" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="qud-Lr-wjC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
