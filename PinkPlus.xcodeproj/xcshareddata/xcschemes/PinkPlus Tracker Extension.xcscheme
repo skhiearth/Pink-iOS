@@ -71,7 +71,7 @@
       <RemoteRunnable
          runnableDebuggingMode = "2"
          BundleIdentifier = "com.apple.Carousel"
-         RemotePath = "/Pink+ Tracker Extension">
+         RemotePath = "/PinkPlus Tracker Extension">
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "D089B56F25206EBA00A14417"
@@ -90,7 +90,7 @@
       <RemoteRunnable
          runnableDebuggingMode = "2"
          BundleIdentifier = "com.apple.Carousel"
-         RemotePath = "/Pink+ Tracker Extension">
+         RemotePath = "/PinkPlus Tracker Extension">
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "D089B56F25206EBA00A14417"

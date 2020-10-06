@@ -57,7 +57,7 @@
       <RemoteRunnable
          runnableDebuggingMode = "2"
          BundleIdentifier = "com.apple.Carousel"
-         RemotePath = "/Pink+">
+         RemotePath = "/PinkPlus">
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "D089B56325206EB700A14417"
@@ -76,7 +76,7 @@
       <RemoteRunnable
          runnableDebuggingMode = "2"
          BundleIdentifier = "com.apple.Carousel"
-         RemotePath = "/Pink+">
+         RemotePath = "/PinkPlus">
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "D089B56325206EB700A14417"
