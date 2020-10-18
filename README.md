@@ -1,6 +1,6 @@
 # Pink+
 
-Made with ❤️ by [The Misfits](https://the-misfits.github.io/) in India.
+Code Snippets and supporting documentation for the Pink+ project by [The Misfits](https://the-misfits.github.io/), in India.
 
 To beta test the app using TestFlight, click [here](https://testflight.apple.com/join/EtgAcnax).
 
@@ -81,3 +81,5 @@ Health being a critical component of our lives, especially in the current scenar
 #### Instructions
 
 Clone the GitHub repo on your local machine. Navigate to the project folder in the terminal and run `pod install` to install dependencies. Open the workspace in Xcode, configure the profiles and hit run for the simulator to load up. For testing the Watch Tracker, change the target to the Pink+ Tracker and hit run.
+
+Made with ❤️ by [Aditya](https://github.com/adicadi), [Arpit](https://github.com/glitcheritzu), [Ramanuj](https://github.com/ramanujs3), [Simran](https://github.com/simmsss), [Utkarsh](https://github.com/skhiearth), and [Yash](https://github.com/ygarg704)
